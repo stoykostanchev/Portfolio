@@ -1,10 +1,11 @@
 var express  = require('express'), 
     mongoose = require('mongoose'),
+    dbAuth   = require('./dbcreditentials'),
     Schema   = mongoose.Schema,
     db, app;
 //Db
+db = mongoose.connect(dbAuth.url).connection;
 
-db = mongoose.connection;
 var blogPostsSchema = new Schema({
     title  : String,
     author : String,
@@ -38,6 +39,7 @@ app.use('/utils',     express.static(__dirname + '/client/utils'));
 app.use('/resources', express.static(__dirname + '/client/resources'));
 app.use('/templates', express.static(__dirname + '/client/views/templates'));
 app.use('/js',        express.static(__dirname + "/client/js"));
+
 app.listen(3000, function() {
     console.log('Im listening!');
 });
