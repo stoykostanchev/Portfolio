@@ -25,15 +25,14 @@ app.factory('PostsService', function () {
 app.config(['$routeProvider', function ($routeProvider) { 
     $routeProvider
     .when("/", {
-        templateUrl : "views/templates/navigator.html", 
+        templateUrl : "templates/navigator.html", 
         controller  : "NavigatorController"
     })
     .when("/Posts", {
-        templateUrl : "views/templates/posts.html",
+        templateUrl : "templates/posts.html",
         controller  : "PostsController"
     })
     .otherwise("/404", {
-        templateUrl : "views/index.html",
-        controller  : "NavigatorController"
+        templateUrl : "index.html"
     });
 }]);

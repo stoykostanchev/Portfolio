@@ -1,8 +1,7 @@
 <nav ng-controller="NavigatorController"">
     <div class="navigator">
-         <a href="{{cat.name}}" class="btn btn-default" role="button" ng-repeat="cat in categories">
+         <a href="#{{cat.name}}" class="btn btn-default" role="button" ng-repeat="cat in categories">
              {{cat.name}}
         </a>
      </div>
 </nav>
-
