@@ -5,11 +5,14 @@
         <link rel='stylesheet' type='text/css' href='/resources/css/navigator.css'>
     </head> 	
     <body ng-app='projectX'>
+        <div ng-include="'/templates/navigator.html'"></div>
         <div ng-view></div>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
         <script type="text/javascript" src="/js/controllers/projectXcontroller.js"></script>         
         <script type="text/javascript" src="/js/controllers/navigatorController.js"></script> 
         <script type="text/javascript" src="/js/controllers/postsController.js"></script> 
+        <script type="text/javascript" src="/js/controllers/projects.js"></script> 
+        <script type="text/javascript" src="/js/controllers/contactsController.js"></script> 
    </body>
 </html>

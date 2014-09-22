@@ -1,0 +1,3 @@
+function ContactsController ($scope) {
+
+}
