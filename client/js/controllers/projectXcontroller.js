@@ -1,6 +1,5 @@
 var app = angular.module('projectX', ['ngRoute']);
 //var navigatorModule = angular.module('NavigatorModule', []);
-
 app.factory('PostsService', function () {
    var postService = {};
 
@@ -22,6 +21,7 @@ app.factory('PostsService', function () {
    }
    return postService;
 });
+
 app.config(['$routeProvider', function ($routeProvider) { 
     $routeProvider
     .when("/", {

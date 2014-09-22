@@ -1,7 +1,7 @@
 <nav ng-controller="NavigatorController"">
     <div class="navigator">
-         <a href="#{{cat.name}}" class="btn btn-default" role="button" ng-repeat="cat in categories">
-             {{cat.name}}
+         <a href="#{{cat.name}}" class="btn btn-default" ng-class="{active:isActive(cat.name)}" role="button" ng-repeat="cat in categories">
+             {{cat.name}} {{cat.isActive}}
         </a>
      </div>
 </nav>
