@@ -3,5 +3,9 @@
     padding          : 5px 30px;            
 }
 .navigator .btn {
-    margin-left: 2px;
+    margin-left : 2px;
+}
+[class^="icon-"], [class*=" icon-"] {    
+    font-size : 30px;   
+    margin    : 10px;   
 }
