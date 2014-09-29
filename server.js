@@ -41,6 +41,20 @@ app.use('/resources', express.static(__dirname + '/client/resources'));
 app.use('/templates', express.static(__dirname + '/client/views/templates'));
 app.use('/js',        express.static(__dirname + "/client/js"));
 
+
 app.listen(port, function() {
     console.log('Im listening on port '+port+'.');
 });
+/*Lipsum [https://github.com/traviskaufman/node-lipsum, http://www.lipsum.com/]
+usage example : */
+var Lipsum = require('node-lipsum');
+var fs = require('fs');
+var lipsum = new Lipsum();
+var lipsumOpts = {
+  start: 'yes', //start with "Lorem ipsum"
+  what: 'bytes', //paragraphs words bytes lists
+  amount: 80
+};
+lipsum.getText(function(text) {
+    console.log('LIPSUM SERVICE EXAMPLE: ', text);    
+}, lipsumOpts);
