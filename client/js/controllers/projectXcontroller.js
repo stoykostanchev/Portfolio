@@ -1,28 +1,6 @@
-var app = angular.module('projectX', ['ngRoute']);
-//var navigatorModule = angular.module('NavigatorModule', []);
-app.factory('PostsService', function () {
-   var postService = {};
-
-   postService.query = function () {
-      return [
-        {
-             name : 'Posts'
-	    },
-	    {
-             name : 'Projects'
-	    },
-	    {
-             name : 'Contact'
-	    },
-        {
-             name : 'About'
-	    }
-      ];
-   }
-   return postService;
-});
-
-app.config(['$routeProvider', function ($routeProvider) { 
+angular.module('projectX', 
+    ['ngRoute']
+).config(['$routeProvider', function ($routeProvider) { 
     $routeProvider
     .when("/", {
         templateUrl : "templates/posts.html", 
