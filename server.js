@@ -30,31 +30,37 @@ db.once('open', function callback() {
     //});	
 });
 //Router
+var router = express.Router();
 app = express();
-app.get('/', function (req, res) {
+router.get('/', function (req, res) {
     res.sendFile('index.html', { 
         root: __dirname + '/client/views'
     });
 });
-app.use('/utils',     express.static(__dirname + '/client/utils'));
+router.get('/server', function (req, res) {
+    res.sendFile('index.html', { 
+        root: __dirname + '/client/views'
+    });
+});
+router.use('/utils',     express.static(__dirname + '/client/utils'));
+//API
+var Post = require('./server/models/Post.js');
+router.route('/server/API/REST/post')
+    .get(function(req, res) {
+        Post.find(function(err, posts) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(posts); 
+            }
+        });
+    });
+
 app.use('/resources', express.static(__dirname + '/client/resources'));
 app.use('/templates', express.static(__dirname + '/client/views/templates'));
 app.use('/js',        express.static(__dirname + "/client/js"));
-
+app.use('/', router);
 
 app.listen(port, function() {
     console.log('Im listening on port '+port+'.');
 });
-/*Lipsum [https://github.com/traviskaufman/node-lipsum, http://www.lipsum.com/]
-usage example : */
-var Lipsum = require('node-lipsum');
-var fs = require('fs');
-var lipsum = new Lipsum();
-var lipsumOpts = {
-  start: 'yes', //start with "Lorem ipsum"
-  what: 'bytes', //paragraphs words bytes lists
-  amount: 80
-};
-lipsum.getText(function(text) {
-    console.log('LIPSUM SERVICE EXAMPLE: ', text);    
-}, lipsumOpts);
