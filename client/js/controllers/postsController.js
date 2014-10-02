@@ -1,4 +1,4 @@
-function PostsController ($scope) {
-
+function PostsController ($scope, BlogService) {
+    $scope.posts = BlogService.query();
 }
 

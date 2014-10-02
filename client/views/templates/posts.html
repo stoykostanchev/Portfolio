@@ -1,3 +1,9 @@
-<p>
-POSTS
-</p>
+<div style="display : inline-box; border : solid 1px lightgray; width: 300px; background-color: rgb(208,208,208); margin: 10px; padding : 2px">
+    <p style="text-decoration: underline; font-weight: bold">
+    Recent entries :
+    </p>
+    <div ng-repeat="post in posts">
+        <p style="color : green ; margin-left : 5px"> {{post.date | date : 'yyyy-MM-dd'}} </p>
+        <p style="color : purple; margin-left : 15px">{{post.title}} </p>
+    </div>
+</div>

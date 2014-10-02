@@ -1,5 +1,5 @@
 angular.module('projectX', 
-    ['ngRoute']
+    ['ngRoute', 'ngResource']
 ).config(['$routeProvider', function ($routeProvider) { 
     $routeProvider
     .when("/", {
