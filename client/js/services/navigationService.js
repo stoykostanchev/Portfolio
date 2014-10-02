@@ -1,8 +1,8 @@
 angular.module('projectX')
-    .factory('PostsService', function () {
-       var postService = {};
+    .factory('NavigationService', function () {
+       var navService = {};
     
-       postService.query = function () {
+       navService.getMainNavItems = function () {
           return [
             {
                  name : 'Posts'
@@ -18,5 +18,5 @@ angular.module('projectX')
     	    }
           ];
        }
-       return postService;
+       return navService;
     });

@@ -1,5 +1,5 @@
-function NavigatorController($scope, PostsService, $location) {
-    var cats       = PostsService.query();
+function NavigatorController($scope, NavigationService, $location) {
+    var cats       = NavigationService.getMainNavItems();
     $scope.categories = cats;
     
     $scope.isActive = function(route) {
