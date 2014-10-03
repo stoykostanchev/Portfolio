@@ -1,9 +1,2 @@
-<div style="display : inline-box; border : solid 1px lightgray; width: 300px; background-color: rgb(208,208,208); margin: 10px; padding : 2px">
-    <p style="text-decoration: underline; font-weight: bold">
-    Recent entries :
-    </p>
-    <div ng-repeat="post in posts">
-        <p style="color : green ; margin-left : 5px"> {{post.date | date : 'yyyy-MM-dd'}} </p>
-        <p style="color : purple; margin-left : 15px">{{post.title}} </p>
-    </div>
-</div>
+<div style="width: 300px; float: left; min-height: 200px; border : solid 1px lightgray; background-color: rgb(208,208,208)" ng-include="'/templates/posts/list.html'"></div>
+<div style="padding-left: 310px; height: 500px; " ng-include="'/templates/posts/display.html'"></div>
