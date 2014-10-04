@@ -47,7 +47,8 @@ router.use('/utils',     express.static(__dirname + '/client/utils'));
 var Post = require('./server/models/Post.js');
 router.route('/server/API/REST/post')
     .get(function(req, res) {
-        Post.find(function(err, posts) {
+        //This will use pipelining for the arguments, once a Mongo model kicks in
+        Post.find({ id : req.query.id }, req.query.fields,function(err, posts) {
             if (err) {
                 res.send(err);
             } else {
