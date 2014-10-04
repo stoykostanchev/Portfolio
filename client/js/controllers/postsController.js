@@ -1,4 +1,5 @@
 function PostsController ($scope, BlogService) {
-    $scope.posts = BlogService.query();
+    //I wonder how this works...Query is async after all :?
+    $scope.posts = BlogService.query({ fields : "id date title"});
 }
 
