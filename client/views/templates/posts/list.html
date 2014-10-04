@@ -3,5 +3,5 @@ Recent entries :
 </p>
 <div ng-repeat="post in posts">
     <p style="color : green ; margin-left : 5px"> {{post.date | date : 'yyyy-MM-dd'}} </p>
-    <p ng-click="setActive(post.id)" style="color : purple; margin-left : 15px">{{post.title}} </p>
+    <a ng-href="#/Post/{{post.id}}" style="color : purple; margin-left : 15px">{{post.title}} </p>
 </div>

@@ -21,6 +21,16 @@ angular.module('projectX',
             }
         }
     })
+    .state("posts.post", {
+        url    : '^/Post/{postId}',
+        views  : { 
+            'post@posts' : {
+                templateUrl : 'templates/posts/display.html',
+                url         : '/Post/:postId',
+                controller  : 'PostDisplayCtrl'
+            }
+        }
+    })
     .state('about', {
         url         : '/About',
         templateUrl : 'templates/about.html'
