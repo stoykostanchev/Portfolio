@@ -29,7 +29,8 @@ module.exports = {
                         id      : params.id || count+1,
                         title   : text,
                         date    : postD.setDate(now.getDate() - count),
-                        content : text
+                        content : text,
+                        author  : 'Stoyko Stanchev'
                     }, p;
                 
                 count--;
