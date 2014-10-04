@@ -1,13 +1,5 @@
-<nav ng-controller="NavigatorController"">
-    <div class="navigator">
-         <a href="#{{cat.name}}" class="btn btn-default" ng-class="{active:isActive(cat.name)}" role="button" ng-repeat="cat in categories">
-             {{cat.name}} {{cat.isActive}}
-        </a>
-     </div>
-</nav>
-<div style="margin: 20px 0">
-    <span class="icon-home"></span>
-    <span class="icon-blog" style="color: orange"></span>
-    <span class="icon-books" style="color: green"></span>
-    <span class="icon-bubbles4" style="color: red"></span>
+<div ng-controller="NavigatorController" class="navigator">
+    <a ui-sref-active="active" ui-sref="{{cat.name.toLowerCase()}}"  class="btn btn-default" role="button" ng-repeat="cat in categories">
+        {{cat.name}}
+    </a>
 </div>

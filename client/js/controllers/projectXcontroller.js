@@ -1,27 +1,38 @@
 angular.module('projectX', 
-    ['ngRoute', 'ngResource']
-).config(['$routeProvider', function ($routeProvider) { 
-    $routeProvider
-    .when("/", {
-        templateUrl : "templates/posts.html", 
-        controller  : "PostsController"
+    ['ui.router', 'ngResource']
+).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) { 
+    $urlRouterProvider.when('', '/Posts');
+    $stateProvider
+    .state("home", {
+        url        : ''
     })
-    .when("/Posts", {
-        templateUrl : "templates/posts.html", 
-        controller  : "PostsController"
+    .state("posts", {
+        url    : '/Posts',
+        views  : { 
+            ''           : { 
+                templateUrl : "templates/posts.html"
+            },
+            'list@posts' : {
+                templateUrl : 'templates/posts/list.html',
+                controller  : 'PostsController'
+            },
+            'post@posts' : {
+                templateUrl : 'templates/posts/display.html'
+            }
+        }
     })
-    .when('/About', {
+    .state('about', {
+        url         : '/About',
         templateUrl : 'templates/about.html'
     })
-    .when('/Contact', {
+    .state('contact', {
+        url         : '/Contact',
         templateUrl : 'templates/contact.html',
         controller  : 'ContactsController'
     })
-    .when('/Projects', {
+    .state('projects', {
+        url         : '/Projects',
         templateUrl : 'templates/projects.html',
         controller  : 'ProjectsController'
-    })
-    .otherwise("/404", {
-        templateUrl : "index.html"
     });
 }]);
