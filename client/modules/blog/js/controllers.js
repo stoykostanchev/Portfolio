@@ -4,7 +4,7 @@ function PostsController ($scope, BlogService) {
 }
 angular.module('projectX')
     .controller('LastestPostCtrl', function($scope, $state, BlogService) {
-        BlogService.get({ latest : true }, function(post) {
+        BlogService.getLatest(function(post) {
             $scope.post = post;
             $state.go('.post', 
                 { postId : post.id }, 
@@ -16,7 +16,7 @@ angular.module('projectX')
 angular.module('projectX')
     .controller('PostDisplayCtrl',
         function($scope, $stateParams, BlogService) {
-            BlogService.get({ id : $stateParams.postId }, function ( post ) {
+            BlogService.get({ postId : $stateParams.postId }, function ( post ) {
                 $scope.post = post;
             });
         }   

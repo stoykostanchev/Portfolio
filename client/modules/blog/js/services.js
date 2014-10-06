@@ -1,7 +1,11 @@
 angular.module('projectX')
     .factory('BlogService', ['$resource', function ($resource) {
-        var service = {},
-            blog_RES = $resource('/server/API/REST/post/:postId');
+        var blog_RES = $resource('/server/API/REST/post/:postId', {}, {
+                getLatest : {
+                    url : '/server/API/REST/post/latest',
+                    isArray : false
+                }
+            });
         
         return blog_RES; 
     }]);
