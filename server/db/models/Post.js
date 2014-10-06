@@ -14,7 +14,7 @@ module.exports = {
         var posts = [],
             count = params.id ? 1 : 5,
             now   = new Date();
-            
+  
         fields = fields ? fields : 'all';
         
         (function getWord() {
