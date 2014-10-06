@@ -17,7 +17,8 @@ angular.module('projectX',
                 controller  : 'PostsController'
             },
             'post@posts' : {
-                templateUrl : 'templates/posts/display.html'
+                templateUrl : 'templates/posts/display.html',
+                controller  : 'LastestPostCtrl'
             }
         }
     })
