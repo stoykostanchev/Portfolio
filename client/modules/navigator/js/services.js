@@ -5,7 +5,7 @@ angular.module('projectX')
        navService.getMainNavItems = function () {
           return [
             {
-                 name : 'Posts'
+                 name : 'Blog'
     	    },
     	    {
                  name : 'Projects'

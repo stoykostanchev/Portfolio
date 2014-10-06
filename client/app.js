@@ -1,47 +1,47 @@
 angular.module('projectX', 
     ['ui.router', 'ngResource']
 ).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) { 
-    $urlRouterProvider.when('', '/Posts');
+    $urlRouterProvider.when('', '/blog')
+        .otherwise('/blog');
     $stateProvider
     .state("home", {
         url        : ''
     })
-    .state("posts", {
-        url    : '/Posts',
+    .state("blog", {
+        url    : '/blog',
         views  : { 
             ''           : { 
                 templateUrl : "modules/blog/blog.html"
             },
-            'list@posts' : {
+            'list@blog' : {
                 templateUrl : 'modules/blog/views/list.html',
                 controller  : 'PostsController'
             },
-            'post@posts' : {
+            'post@blog' : {
                 templateUrl : 'modules/blog/views/display.html',
                 controller  : 'LastestPostCtrl'
             }
         }
     })
-    .state("posts.post", {
-        url    : '^/Post/{postId}',
+    .state("blog.post", {
+        url    : '/post/{postId}',
         views  : { 
-            'post@posts' : {
+            'post@blog' : {
                 templateUrl : 'modules/blog/views/display.html',
-                url         : '/Post/:postId',
                 controller  : 'PostDisplayCtrl'
             }
         }
     })
     .state('about', {
-        url         : '/About',
+        url         : '/about',
         templateUrl : 'modules/about/about.html'
     })
     .state('contact', {
-        url         : '/Contact',
+        url         : '/contact',
         templateUrl : 'modules/contact/contact.html'
     })
     .state('projects', {
-        url         : '/Projects',
+        url         : '/projects',
         templateUrl : 'modules/projects/projects.html'
     });
 }]);
