@@ -10,14 +10,14 @@ angular.module('projectX',
         url    : '/Posts',
         views  : { 
             ''           : { 
-                templateUrl : "templates/posts.html"
+                templateUrl : "modules/blog/blog.html"
             },
             'list@posts' : {
-                templateUrl : 'templates/posts/list.html',
+                templateUrl : 'modules/blog/views/list.html',
                 controller  : 'PostsController'
             },
             'post@posts' : {
-                templateUrl : 'templates/posts/display.html',
+                templateUrl : 'modules/blog/views/display.html',
                 controller  : 'LastestPostCtrl'
             }
         }
@@ -26,7 +26,7 @@ angular.module('projectX',
         url    : '^/Post/{postId}',
         views  : { 
             'post@posts' : {
-                templateUrl : 'templates/posts/display.html',
+                templateUrl : 'modules/blog/views/display.html',
                 url         : '/Post/:postId',
                 controller  : 'PostDisplayCtrl'
             }
@@ -34,16 +34,14 @@ angular.module('projectX',
     })
     .state('about', {
         url         : '/About',
-        templateUrl : 'templates/about.html'
+        templateUrl : 'modules/about/about.html'
     })
     .state('contact', {
         url         : '/Contact',
-        templateUrl : 'templates/contact.html',
-        controller  : 'ContactsController'
+        templateUrl : 'modules/contact/contact.html'
     })
     .state('projects', {
         url         : '/Projects',
-        templateUrl : 'templates/projects.html',
-        controller  : 'ProjectsController'
+        templateUrl : 'modules/projects/projects.html'
     });
 }]);
