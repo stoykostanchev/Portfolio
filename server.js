@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
-    dbAuth   = require('./db/dbcreditentials'),
+    dbAuth   = require('./server/db/dbcreditentials'),
     port     = process.env.PORT || 3000,
-    router   = require('./utils/router'),
+    router   = require('./server/utils/router'),
     express  = require('express'), 
     app      = express(),
     db;
