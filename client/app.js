@@ -36,6 +36,27 @@ angular.module('projectX',
         url         : '/about',
         templateUrl : 'modules/about/about.html'
     })
+    .state('tutor', {
+        url         : '/howtos',
+        views       : {
+            '' : {
+                template    : "<div ui-view='mainview'></div>",
+            }, 
+            'mainview@tutor' :{
+                controller  : 'TutorsController',
+                templateUrl : 'modules/tutor/tutor.html'
+            }
+        }
+    })
+    .state('tutor.display', {
+        url         : '^/howto/:id',
+        views       : {
+            'mainview@tutor' : {
+                controller  : 'TutorCtrl',
+                templateUrl : 'modules/tutor/views/tutorial.html'
+            }
+        }
+    })
     .state('contact', {
         url         : '/contact',
         templateUrl : 'modules/contact/contact.html'

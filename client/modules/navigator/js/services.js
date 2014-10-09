@@ -10,6 +10,10 @@ angular.module('projectX')
     	    {
                  name : 'Projects'
     	    },
+            {
+                 name : "How To's",
+                 sref : 'tutor'
+    	    },
     	    {
                  name : 'Contact'
     	    },

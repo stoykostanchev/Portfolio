@@ -1,0 +1,62 @@
+.tutor {
+    margin : 10px;
+    padding: 10px;
+    border : dashed 1px gray;
+}
+.tutor .controls {
+    position : relative;
+    padding  : 10px 0px;
+}
+.tutor .controls .filters {
+    display : inline-block;
+}
+.tutor .controls .sorters {
+    margin-left : 30px;
+    display : inline-block;
+}
+.tutor .controls .sorters .glyphicon {
+    display   : inline-block;
+    font-size : 22px;
+    position  : relative;
+    top       : 7px;
+    cursor    : pointer;
+    margin-left : 3px;
+}
+.tutor .controls .search {
+    position : absolute;
+    right    : 0px;
+    top      : 15px;
+}
+
+.tutor .results {
+    border  : dotted 1px darkgray;
+    padding : 10px;
+}
+.tutor .results .tutorial {
+    margin : 10px;
+    background-color : lightblue;
+    border-radius    : 4px;
+    padding : 10px;
+}
+.tutor .results .tutorial .title {
+    font-size : 15px;
+    font-weight : bold;
+}
+
+.tutorial-display {
+    margin  : 10px;
+}
+.tutorial-display .navigation {
+    font-size : 20px;
+}
+.tutorial-display .tutorial {
+    border  : dashed 1px black;
+    padding : 15px;
+    background-color : pink;
+}
+.tutorial-display .tutorial .title {
+    font-size : 25px;
+}
+.tutorial .description {
+    margin : 10px 0;
+}
