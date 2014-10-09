@@ -41,7 +41,24 @@ angular.module('projectX',
         templateUrl : 'modules/contact/contact.html'
     })
     .state('projects', {
-        url         : '/projects',
-        templateUrl : 'modules/projects/projects.html'
+        url      : '/projects',
+        views  : { 
+            '' : {
+                template : '<div ui-view="view"></div>'  
+            },
+            'view@projects' : {
+                templateUrl : 'modules/projects/views/extendedList.html',
+                controller  : 'ProjectsExtendedListController'
+            }
+        }
+    })
+    .state('projects.project', {
+        url : '^/project/:projectId',
+        views  : { 
+            'view@projects' : {
+                templateUrl : 'modules/projects/views/display.html',
+                controller  : 'ProjectDisplayController'
+            }
+        }
     });
 }]);

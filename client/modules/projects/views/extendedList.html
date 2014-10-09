@@ -1,0 +1,7 @@
+<div class="projects"> 
+    <span class="project" ng-class="{ odd : $odd , even : $even}" ng-repeat="project in projects">
+        <a ng-href="{{project.git_link}}" class="title icon-github" target="_blank"> {{project.title}}</a>
+        <span class="description"> {{project.description | limitTo : 200 }}... </span>
+        <a class="more" ui-sref="projects.project({projectId : project.id})"> Read more <span>
+    </span>
+</div>

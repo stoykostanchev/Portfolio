@@ -1,0 +1,60 @@
+.projects {
+    width   : 100% ;
+    float   : left ;
+    padding : 10px ;
+    background-color : lightgray;
+}
+.project {
+    margin-bottom    : 10px ;
+    background-color : white;
+    padding : 0 10px 5px 10px;
+    width   : 45%;
+    color   : orange;
+    border  : solid 1px black;
+}
+.project.even {
+    clear : right;
+    float : left ;
+    
+}
+.project.odd {
+    float : right;
+}
+
+.project .title {
+    display : block;
+    color   : rgb(30, 75, 5);
+    
+}
+.project .title:hover {
+    color  : rgb(60, 130, 10);
+    cursor : pointer;
+    text-decoration : none;
+}
+.project .more {
+    display    : block;
+    text-align : right;
+}
+
+.project-display {
+    padding : 10px;
+    margin  : 10px;
+    height  : 100%;
+    border  : 1px solid brown;
+    background-color : orange;
+}
+.project-display .title {
+    font-size   : 20px;
+    font-weight : bold;
+    color       : brown;
+}
+.project-display .description {
+    margin : 20px 0;
+}
+.project-display .back-btn {
+    border  : 1px solid brown;
+    color   : brown;
+    padding : 5px;
+    background-color : white;
+    font-weight      : bold;
+}
