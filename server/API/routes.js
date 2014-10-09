@@ -6,5 +6,6 @@ var express = require('express'),
 module.exports = function(app) {
     app.use('/server/API/REST/post'   , require('./REST/post'));
     app.use('/server/API/REST/project', require('./REST/project'));
+    app.use('/server/API/REST/tutorial', require('./REST/tutorial'));
     app.use('/', router);
 }
