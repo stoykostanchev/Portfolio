@@ -1,0 +1,8 @@
+.contacts {
+    width   : 500px;
+    padding : 20px;
+}
+
+.contacts textarea {
+    height : 250px;
+}

@@ -63,6 +63,7 @@ angular.module('projectX',
     })
     .state('contact', {
         url         : '/contact',
+        controller  : 'ContactsCtrl',
         templateUrl : 'modules/contact/contact.html'
     })
     .state('projects', {
