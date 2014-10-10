@@ -1,12 +1,8 @@
 angular.module('projectX', 
     ['ui.router', 'ngResource']
 ).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) { 
-    $urlRouterProvider.when('', '/blog')
-        .otherwise('/blog');
+    $urlRouterProvider.otherwise('/home');
     $stateProvider
-    .state("home", {
-        url        : ''
-    })
     .state("blog", {
         url    : '/blog',
         views  : { 
@@ -33,8 +29,16 @@ angular.module('projectX',
         }
     })
     .state('about', {
-        url         : '/about',
-        templateUrl : 'modules/about/about.html'
+        url         : '/home',
+        views : {
+            '' : {
+                templateUrl : 'modules/about/about.html'
+            },
+            'news@about' : {
+                templateUrl : 'modules/about/views/news.html',
+                controller  : 'NewsCtrl'
+            }
+        }
     })
     .state('tutor', {
         url         : '/howtos',

@@ -9,10 +9,11 @@
         <link rel='stylesheet' type='text/css' href='modules/blog/resources/css/display.css'>
         <link rel='stylesheet' type='text/css' href='modules/projects/resources/css/projects.css'>
         <link rel='stylesheet' type='text/css' href='modules/tutor/resources/css/tutor.css'>
+        <link rel='stylesheet' type='text/css' href='modules/about/resources/css/about.css'>
     </head> 	
     <body ng-app='projectX'>
         <div ng-include="'/modules/navigator/navigator.html'"></div>
-        <div ui-view></div>
+        <div ui-view style="position: relative"></div>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.js"></script>
@@ -27,5 +28,7 @@
         <script type="text/javascript" src="/common/js/directives/backButton.js"></script>
         <script type="text/javascript" src="/modules/tutor/js/controllers.js"></script>
         <script type="text/javascript" src="/modules/tutor/js/services.js"></script>
+        <script type="text/javascript" src="/modules/about/js/services.js"></script>
+        <script type="text/javascript" src="/modules/about/js/controllers.js"></script>
    </body>
 </html>

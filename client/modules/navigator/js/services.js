@@ -5,6 +5,10 @@ angular.module('projectX')
        navService.getMainNavItems = function () {
           return [
             {
+                 name : 'HOME',
+                 sref : 'about'
+    	    },
+            {
                  name : 'Blog'
     	    },
     	    {
@@ -16,9 +20,6 @@ angular.module('projectX')
     	    },
     	    {
                  name : 'Contact'
-    	    },
-            {
-                 name : 'About'
     	    }
           ];
        }

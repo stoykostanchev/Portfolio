@@ -1,0 +1,27 @@
+.info {
+    border  : solid 1px black;
+    padding : 10px;
+    overflow: hidden;
+    margin  : 10px;
+    background-color : rgba(13, 28, 215, 0.35);
+}
+
+.news {
+    float   : right;
+    border  : solid 1px black;
+    width   : 400px;
+    padding : 10px;
+    margin  : 0 10px;
+    background-color : #FFCC33;
+}
+
+.news .newsItem {
+    margin  : 10px;
+    padding : 10px;
+    background-color : #CC99CC;
+    border-radius    : 5px;
+}
+.news .newsItem .title {
+    font-size   : 15px;
+    font-weight : bold;
+}
