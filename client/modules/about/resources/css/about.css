@@ -1,6 +1,6 @@
 .info {
     /*Hack to set the render context*/
-    overflow: hidden;
+    overflow : hidden;
 }
 
 .news {
@@ -27,4 +27,12 @@
 }
 .news .newsItem .description {
     padding : 10px 0 0 20px;
+}
+.module-about-picture {
+    float  : left;
+    height : 200px;
+    margin : 0 10px 10px 0;
+}
+.module-about-info {
+    overflow : auto;
 }
