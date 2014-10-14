@@ -1,7 +1,16 @@
-<div class="projects"> 
-    <span class="project" ng-class="{ odd : $odd , even : $even}" ng-repeat="project in projects">
-        <a ng-href="{{project.git_link}}" class="title icon-github" target="_blank"> {{project.title}}</a>
-        <span class="description"> {{project.description | limitTo : 200 }}... </span>
-        <a class="more" ui-sref="projects.project({projectId : project.id})"> Read more <span>
-    </span>
+<div ng-repeat="project in projects" class="row" ng-if="$even">
+    <div class="col-md-6 pdng-l">
+        <div class="project main-brdr pdng-l main-bgclr-alt2">
+            <a ng-href="{{project.git_link}}" class="title icon-github fnt-xl" target="_blank"> {{project.title}}</a>
+            <span class="description"> {{project.description | limitTo : 200 }}... </span>
+            <a class="more" ui-sref="projects.project({projectId : project.id})"> Read more <span>
+        </div>
+    </div>
+    <div class="col-md-6 pdng-l" ng-class='odd' ng-if="!$last && $even && projects[$index + 1]">
+        <div class="project main-brdr pdng-l main-bgclr-alt2">
+            <a ng-href="{{projects[$index + 1].git_link}}" class="title icon-github fnt-xl" target="_blank"> {{projects[$index + 1].title}}</a>
+            <span class="description"> {{projects[$index + 1].description | limitTo : 200 }}... </span>
+            <a class="more" ui-sref="projects.project({projectId : projects[$index + 1].id})"> Read more <span>
+        </div>
+    </div>
 </div>

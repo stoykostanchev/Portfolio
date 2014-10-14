@@ -1,0 +1,12 @@
+.module-blog .main-bgclr-alt{
+    background-color : #B3F36D;;
+}
+.blog-list-view {
+    width: 300px; 
+    float: right; 
+    min-height: 200px; 
+}
+
+.blog-post-view {
+    padding-right: 310px;
+}

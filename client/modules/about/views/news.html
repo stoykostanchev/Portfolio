@@ -1,10 +1,11 @@
 <div class="news">
-    <div class="header"> Latest site news: </div>
-    <div class="newsItem" ng-repeat="newsItem in news">
-        <div class="title"> {{newsItem.title}}</div>
-        <div class="date"> {{newsItem.date | date : 'yyyy-MM-dd'}}</div>
-        <div class="author"> {{newsItem.author}}</div>
-        <div class="description"> {{newsItem.description}}</div>
-        <a class="link"> {{newsItem.link}}</a>
+    <div class="header fnt-l"> Latest site updates: </div>
+    <div class="main-brdr main-bgclr-alt2 fnt-m">
+        <div class="newsItem pdng-l" ng-repeat="newsItem in news">
+            <div class="title fnt-l "> <a ng-href="{{newsItem.link}}"><span class="icon-bullhorn"></span>{{newsItem.title}}</a></div>
+            <div class="date"> {{newsItem.date | date : 'yyyy-MM-dd'}}</div>
+            <div class="description"> {{newsItem.description}}</div>
+            <div class="author"> {{newsItem.author}}</div>
+        </div>
     </div>
 </div>

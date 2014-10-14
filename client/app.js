@@ -44,11 +44,11 @@ angular.module('projectX',
         url         : '/howtos',
         views       : {
             '' : {
-                template    : "<div ui-view='mainview'></div>",
+                template    : "<div ui-view='mainview' class='module main-brdr module-tutor main-bgclr-alt'></div>",
             }, 
             'mainview@tutor' :{
                 controller  : 'TutorsController',
-                templateUrl : 'modules/tutor/tutor.html'
+                templateUrl : 'modules/tutor/views/search.html'
             }
         }
     })
@@ -70,7 +70,7 @@ angular.module('projectX',
         url      : '/projects',
         views  : { 
             '' : {
-                template : '<div ui-view="view"></div>'  
+                template : '<div ui-view="view" class="module main-brdr module-projects main-bgclr-alt"></div>'  
             },
             'view@projects' : {
                 templateUrl : 'modules/projects/views/extendedList.html',

@@ -1,7 +1,20 @@
-html, body{
-  height:100%;
+.main-view { 
+    overflow  : auto;
+    min-width : 495px;
 }
-a:hover {
-  cursor : pointer;
-  text-decoration : none;  
-}
+.mrgn-s {margin :  5px;}
+.mrgn-m {margin : 10px;}
+.mrgn-l {margin : 15px;}
+.mrgn-xl{margin : 20px;}
+
+.pdng-s  {padding :  5px;}
+.pdng-m  {padding : 10px;}
+.pdng-l  {padding : 15px;}
+.pdng-xl {padding : 20px;}
+.pdng-xxl{padding : 25px;}
+
+.fnt-s  {font-size : 8px;}
+.fnt-m  {font-size : 14px;}
+.fnt-l  {font-size : 22px;}
+.fnt-xl {font-size : 28px;}
+.fnt-xxl{font-size : 36px;}

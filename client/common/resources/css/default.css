@@ -1,0 +1,10 @@
+.main-brdr {border  : solid 1px black;}
+.main-bgclr     {background-color : #BF8430;}
+.main-bgclr-alt {background-color : #FF9500;}
+.main-bgclr-alt2{background-color : #FFC573;}
+
+.module {
+    overflow: auto; 
+    padding : 25px;
+}
+

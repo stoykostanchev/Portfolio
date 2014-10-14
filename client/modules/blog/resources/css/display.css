@@ -1,25 +1,8 @@
-.blogPost {
-    width   : 100%; 
-    height  : 100%; 
-    border  : solid 1px black;
-    padding : 15px 25px 45px 30px;
+.blog-list-results a{
+    display : block;
 }
-.blogPost .title {
-    font-size   : 18px;
-    color       : purple;
-    font-family : Arial;
-    text-align  : center;
-}
-.blogPost .date {
-    font-size   : 14px;
-    color       : darkgreen;
-    text-align  : center;
-}
-.blogPost .author {
-    font-size   : 14px;
-    color       : red;
-    text-align  : center;
-}
-.blogPost .content {
-    color       : purple;
+.blog-list-results .active{
+    cursor : default;
+    color  : black;
+    
 }

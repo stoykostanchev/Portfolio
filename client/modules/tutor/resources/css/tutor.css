@@ -1,62 +1,52 @@
-.tutor {
-    margin : 10px;
-    padding: 10px;
-    border : dashed 1px gray;
+.module-tutor {
+    color : white;
 }
-.tutor .controls {
+.module-tutor .main-bgclr-alt2 {
+    background-color : rgb(181, 182, 182);
+}
+.module-tutor .controls {
     position : relative;
     padding  : 10px 0px;
 }
-.tutor .controls .filters {
+.module-tutor .controls .filters {
     display : inline-block;
 }
-.tutor .controls .sorters {
+.module-tutor .controls .sorters {
     margin-left : 30px;
     display : inline-block;
 }
-.tutor .controls .sorters .glyphicon {
+.module-tutor .controls .sorters .glyphicon {
     display   : inline-block;
     font-size : 22px;
     position  : relative;
     top       : 7px;
     cursor    : pointer;
+    color     : orange;
     margin-left : 3px;
 }
-.tutor .controls .search {
+.module-tutor .controls .search {
     position : absolute;
     right    : 0px;
     top      : 15px;
 }
-
-.tutor .results {
-    border  : dotted 1px darkgray;
+.tutor-results .tutor-entry {
+    margin : 5px 0 10px 0;
+    color  : black;
     padding : 10px;
+    border-radius : 10px;
 }
-.tutor .results .tutorial {
-    margin : 10px;
-    background-color : lightblue;
-    border-radius    : 4px;
-    padding : 10px;
-}
-.tutor .results .tutorial .title {
+.tutor-entry .title {
     font-size : 15px;
     font-weight : bold;
 }
 
-.tutorial-display {
-    margin  : 10px;
-}
 .tutorial-display .navigation {
-    font-size : 20px;
+     margin-bottom : 10px;
 }
 .tutorial-display .tutorial {
     border  : dashed 1px black;
-    padding : 15px;
-    background-color : pink;
+    color : black;
 }
-.tutorial-display .tutorial .title {
-    font-size : 25px;
-}
-.tutorial .description {
+.tutor-entry .description {
     margin : 10px 0;
 }

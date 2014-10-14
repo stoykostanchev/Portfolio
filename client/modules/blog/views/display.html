@@ -1,6 +1,10 @@
-<div class="blogPost">
-    <p class="title"  >{{post.title}}</p>
-    <p class="author" >{{post.author}}</p>
-    <p class="date"   >{{post.date | date : 'yyyy-MM-dd'}}</p>
-    <p class="content">{{post.content}}</p>
+<div class="blog-post">
+    <div class="blog-post-header">
+        <div class="title fnt-xxl">{{post.title}}</div>
+        <p class="author" >{{post.author}}</p>
+        <p class="date"   >{{post.date | date : 'yyyy-MM-dd'}}</p>
+    </div>
+    <div class="blog-post-body main-brdr main-bgclr-alt pdng-m fnt-m">
+        <p class="content">{{post.content}}</p>
+    </div>
 </div>

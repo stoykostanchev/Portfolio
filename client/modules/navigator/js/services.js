@@ -6,7 +6,9 @@ angular.module('projectX')
           return [
             {
                  name : 'HOME',
-                 sref : 'about'
+                 sref : 'about',
+                 text : ' ',
+                 css  : 'about icon-home'
     	    },
             {
                  name : 'Blog'

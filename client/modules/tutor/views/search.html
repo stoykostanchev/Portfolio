@@ -1,4 +1,4 @@
-<div class="tutor">
+<div>
     <!-- Controls - filters, sorters etc. -->
     <form class="controls form-inline" role="form">
         <div class="form-group filters">
@@ -19,8 +19,8 @@
         <input class="search" type="text" placeholder=" - Search -" name="word" ng-model="search.description"/>
     </form>
     <!-- Tutorials found display -->
-    <div class="results">
-        <div class="tutorial" ng-repeat="tutorial in tutorials | orderBy: order : reverse | filter : search">
+    <div class="tutor-results">
+        <div class="tutor-entry main-bgclr-alt2" ng-repeat="tutorial in tutorials | orderBy: order : reverse | filter : search">
             <div class="title"> {{tutorial.title}}</div>
             <div class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</div>
             <div class="author"> {{tutorial.author}}</div>
