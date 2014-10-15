@@ -1,6 +1,6 @@
-.info {
+.module-home-content-body {
     /*Hack to set the render context*/
-    overflow : hidden;
+    overflow : auto;
 }
 
 .news {
