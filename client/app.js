@@ -28,14 +28,14 @@ angular.module('projectX',
             }
         }
     })
-    .state('about', {
-        url         : '/home',
+    .state('home', {
+        url   : '/home',
         views : {
             '' : {
-                templateUrl : 'modules/about/about.html'
+                templateUrl : 'modules/home/home.html'
             },
-            'news@about' : {
-                templateUrl : 'modules/about/views/news.html',
+            'news@home' : {
+                templateUrl : 'modules/home/views/news.html',
                 controller  : 'NewsCtrl'
             }
         }
@@ -86,5 +86,9 @@ angular.module('projectX',
                 controller  : 'ProjectDisplayController'
             }
         }
-    });
+    })
+    .state('about', {
+        url : '/about',
+        templateUrl : 'modules/about/about.html'
+    });;
 }]);

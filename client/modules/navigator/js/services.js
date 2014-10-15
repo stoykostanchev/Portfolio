@@ -6,9 +6,9 @@ angular.module('projectX')
           return [
             {
                  name : 'HOME',
-                 sref : 'about',
+                 sref : 'home',
                  text : ' ',
-                 css  : 'about icon-home'
+                 css  : 'home icon-home'
     	    },
             {
                  name : 'Blog'
@@ -22,6 +22,9 @@ angular.module('projectX')
     	    },
     	    {
                  name : 'Contact'
+    	    },
+            {
+                 name : 'About'
     	    }
           ];
        }

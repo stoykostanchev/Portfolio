@@ -1,37 +1,9 @@
-.info {
-    /*Hack to set the render context*/
-    overflow : hidden;
-}
-
-.news {
-    float   : right;
-    width   : 400px;
-    margin  : 20px 0 0 20px;
-}
-
-.news .newsItem .author{
-    padding    : 10px 0 10px 0;
-    text-align : right;
-    border-bottom : 1px solid black;
-}
-.news .newsItem .title a {
-    color : rgb(115, 40, 25);
-}
-.news .newsItem .title a:hover {
-    color : red;
-}
-.news .newsItem .title span{
-    position : relative;
-    top   : 2px;
-    right : 4px;
-}
-.news .newsItem .description {
-    padding : 10px 0 0 20px;
+.module-about .main-bgclr-alt2 {
+    background-color : white;
 }
 .module-about-picture {
-    float  : left;
     height : 200px;
-    margin : 0 10px 10px 0;
+    margin : 25px 0 25px 25px;
 }
 .module-about-info {
     overflow : auto;

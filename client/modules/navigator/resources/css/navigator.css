@@ -23,13 +23,13 @@
     border-top-right-radius: 8px;
     border-top-left-radius : 8px;
 }
-.nav-about {
+.nav-home {
     color : black;
 }
-.nav-item.nav-about.active {
+.nav-item.nav-home.active {
     color        : white; 
 }
-.nav-about, .nav-item.nav-about.active {
+.nav-home, .nav-item.nav-home.active {
     padding   : 10px;
     font-size : 90px;
     margin-left : 0px;
@@ -45,8 +45,14 @@
     background-color : #6C3255;
 }
 .nav-contact,.module-contact.main-bgclr-alt { 
-    background-color : lightgray;
+    background-color : rgb(124, 132, 71);
 }
 .nav-tutor {
     color : rgb(42, 205, 190);
+}
+.nav-about,.module-about.main-bgclr-alt {
+    background-color : #E2E2E2;
+}
+.nav-about.active {
+    color : black;
 }
