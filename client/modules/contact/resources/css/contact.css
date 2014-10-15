@@ -1,8 +1,6 @@
-.contacts {
-    width   : 500px;
-    padding : 20px;
-}
-
 .contacts textarea {
     height : 250px;
+}
+.module-contact-text h1{
+    margin-top : 0px;
 }
