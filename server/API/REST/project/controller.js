@@ -10,8 +10,8 @@ function callback(res) {
     };
 };
 
-exports.findById = function(req, res) {
-    return Project.find({ id : req.params.id }, req.query.fields, callback(res));
+exports.findByUrlId = function(req, res) {
+    return Project.findOne({ url_id : req.params.id }, req.query.fields, callback(res));
 }
 
 exports.find  = function(req, res) {
