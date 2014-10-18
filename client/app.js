@@ -20,7 +20,7 @@ angular.module('projectX',
         }
     })
     .state("blog.post", {
-        url    : '/post/{postId}',
+        url    : '/post/{postUrlId}',
         views  : { 
             'post@blog' : {
                 templateUrl : 'modules/blog/views/display.html',
