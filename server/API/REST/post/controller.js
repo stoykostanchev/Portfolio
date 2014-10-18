@@ -13,14 +13,14 @@ function callback (res) {
  * Get latest post
  */
 exports.getLatest = function(req, res) {
-    Post.find({ id : 6 }, req.query.fields, callback(res));
+    Post.findOne({}).sort({date: -1}).exec(callback(res));
 };
 
 /**
  * Get a post by id
  */
-exports.findById = function (req, res, next) {
-    Post.find({ id : req.params.id }, req.query.fields, callback(res));
+exports.findByUrlId = function (req, res, next) {
+    Post.findOne({ url_id : req.params.url_id }, req.query.fields, callback(res));
 };
 
 /**
