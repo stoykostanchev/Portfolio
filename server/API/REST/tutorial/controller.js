@@ -10,8 +10,8 @@ function callback(res) {
     };
 };
 
-exports.findById = function(req, res) {
-    return Tutorial.find({ id : req.params.id }, req.query.fields, callback(res));
+exports.findByUrlId = function(req, res) {
+    return Tutorial.findOne({ url_id : req.params.url_id }, req.query.fields, callback(res));
 }
 
 exports.find  = function(req, res) {
