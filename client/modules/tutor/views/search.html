@@ -25,7 +25,7 @@
             <div class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</div>
             <div class="author"> {{tutorial.author}}</div>
             <div class="description"> {{tutorial.description.substr(150)}} ...</div>
-            <a class="more" ui-sref="tutor.display({ id : tutorial.id})"> Read more</div>
+            <a class="more" ui-sref="tutor.display({ urlId : tutorial.url_id})"> Read more</div>
         </div>
     </div>
 </div>

@@ -53,7 +53,7 @@ angular.module('projectX',
         }
     })
     .state('tutor.display', {
-        url         : '^/howto/:id',
+        url         : '^/howto/:urlId',
         views       : {
             'mainview@tutor' : {
                 controller  : 'TutorCtrl',

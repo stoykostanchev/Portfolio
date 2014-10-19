@@ -1,6 +1,6 @@
 angular.module('projectX')
     .controller('TutorCtrl', function($scope, TutorService, $stateParams) {
-        $scope.tutorial = TutorService.get({ id : $stateParams.id });
+        $scope.tutorial = TutorService.get({ urlId : $stateParams.urlId });
     })
     .controller('TutorsController', function($scope, TutorService) {
         $scope.order = 'date';
