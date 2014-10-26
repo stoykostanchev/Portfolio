@@ -1,5 +1,5 @@
 angular.module('projectX', 
-    ['ui.router', 'ngResource']
+    ['ui.router', 'ngResource', 'ngSanitize']
 ).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) { 
     $urlRouterProvider.otherwise('/home');
     $stateProvider

@@ -3,7 +3,7 @@
     Recent entries :
     </p>
     <div class="blog-list-results main-brdr main-bgclr-alt pdng-m">
-        <a ng-repeat="post in posts" ui-sref-active="active" ui-sref=".post({postId : post.id})">
+        <a ng-repeat="post in posts" ui-sref-active="active" ui-sref=".post({postUrlId : post.url_id})">
             <span> {{post.date | date : 'yyyy-MM-dd'}} </span>
             <span> {{post.title}} </span>
         </a>
