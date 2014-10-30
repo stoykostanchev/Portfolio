@@ -24,7 +24,7 @@
             <div class="title"> {{tutorial.title}}</div>
             <div class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</div>
             <div class="author"> {{tutorial.author}}</div>
-            <div class="description"> {{tutorial.description.substr(150)}} ...</div>
+            <div class="description" ng-bind-html="tutorial.short_description"></div>
             <a class="more" ui-sref="tutor.display({ urlId : tutorial.url_id})"> Read more</div>
         </div>
     </div>
