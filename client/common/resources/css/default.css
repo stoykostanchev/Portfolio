@@ -1,10 +1,22 @@
-.main-brdr {border  : solid 1px black;}
-.main-bgclr     {background-color : #BF8430;}
-.main-bgclr-alt {background-color : #FF9500;}
-.main-bgclr-alt2{background-color : #FFC573;}
+.main-brdr {
+    /*border  : solid 1px black;*/
+    /*border-radius : 5px;*/
+}
+.main-bgclr     {background-color : #DEF0F8;}
+/*.main-bgclr     {background-color : black;}*/
+/*.main-bgclr-alt {background-color : #DEF0F8;}*/
+/*.main-bgclr-alt2{background-color : #FFC572;}*/
+.main-bgclr-alt2{background-color : white;}
 
+.module-body {
+    border      : solid 1px lightblue;
+    border-top  : 0px;
+    border-left : 0px;
+    margin-top  : 10px;
+    box-shadow  : 2px 3px 2px lightblue;
+    border-radius : 10px;
+}
 .module {
     overflow: auto; 
-    padding : 25px;
+    padding : 40px;
 }
-

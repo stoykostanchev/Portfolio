@@ -1,9 +1,9 @@
-.module-tutor {
-    color : white;
-}
-.module-tutor .main-bgclr-alt2 {
-    background-color : rgb(181, 182, 182);
-}
+/*.module-tutor {*/
+/*    color : white;*/
+/*}*/
+/*.module-tutor .main-bgclr-alt2 {*/
+/*    background-color : rgb(181, 182, 182);*/
+/*}*/
 .module-tutor .controls {
     position : relative;
     padding  : 10px 0px;
@@ -44,7 +44,7 @@
      margin-bottom : 10px;
 }
 .tutorial-display .tutorial {
-    border  : dashed 1px black;
+/*    border  : dashed 1px black;*/
     color : black;
 }
 .tutor-entry .description {

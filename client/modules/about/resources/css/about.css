@@ -1,8 +1,9 @@
-.module-about .main-bgclr-alt2 {
-    background-color : white;
-}
+/*.module-about .main-bgclr-alt2 {*/
+/*    background-color : white;*/
+/*}*/
 .module-about-picture {
     height : 200px;
+    border : solid 1px rgb(190, 155, 170);
     margin : 25px 0 25px 25px;
 }
 .module-about-info {

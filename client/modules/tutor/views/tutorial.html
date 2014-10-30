@@ -2,10 +2,12 @@
     <div class="navigation fnt-l"> 
         <a href back-button> Tutorials </a>  / {{tutorial.category}} 
     </div>
-    <div class="tutorial main-bgclr-alt2 pdng-l">
+    <div class="tutorial">
         <div class="title fnt-xxl"> {{tutorial.title}}</div>
-        <div class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</div>
         <div class="author"> {{tutorial.author}}</div>
-        <div class="description fnt-m"> {{tutorial.description}}</div>
+        <div class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</div>
+        <div class="tutorial-content pdng-l module-body main-bgclr-alt2">
+            <div class="description fnt-m" ng-bind-html="tutorial.description"></div>
+        </div>
     </div>
 </div>

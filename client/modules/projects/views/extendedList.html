@@ -1,13 +1,13 @@
 <div ng-repeat="project in projects" class="row" ng-if="$even">
     <div class="col-md-6 pdng-l">
-        <div class="project main-brdr pdng-l main-bgclr-alt2">
+        <div class="project module-body main-brdr pdng-l main-bgclr-alt2">
             <a ng-href="{{project.git_link}}" class="title icon-github fnt-xl" target="_blank"> {{project.title}}</a>
             <span class="description"> {{project.short_descr}}... </span>
             <a class="more" ui-sref="projects.project({projectId : project.url_id})"> Read more <span>
         </div>
     </div>
     <div class="col-md-6 pdng-l" ng-class='odd' ng-if="!$last && $even && projects[$index + 1]">
-        <div class="project main-brdr pdng-l main-bgclr-alt2">
+        <div class="project main-brdr module-body pdng-l main-bgclr-alt2">
             <a ng-href="{{projects[$index + 1].git_link}}" class="title icon-github fnt-xl" target="_blank"> {{projects[$index + 1].title}}</a>
             <span class="description"> {{projects[$index + 1].short_descr }}... </span>
             <a class="more" ui-sref="projects.project({projectId : projects[$index + 1].url_id})"> Read more <span>

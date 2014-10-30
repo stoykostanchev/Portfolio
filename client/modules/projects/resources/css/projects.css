@@ -1,15 +1,15 @@
-.module-projects .main-bgclr-alt2 {
-    background-color : darkgreen;
-}
-.project {
-    color : rgb(215, 181, 181);
-}
+/*.module-projects .main-bgclr-alt2 {*/
+/*    background-color : darkgreen;*/
+/*}*/
+/*.project {*/
+/*    color : rgb(215, 181, 181);*/
+/*}*/
 .project .title {
     display : block;
     margin-bottom : 10px;
 }
 .project .title:hover {
-    color  : white;
+    color  : darkblue;
     cursor : pointer;
     text-decoration : none;
 }
@@ -17,15 +17,18 @@
     display    : block;
     text-align : right;
 }
-.project-display.main-bgclr-alt2 {
-    background-color : white;
-}
+/*.project-display.main-bgclr-alt2 {*/
+/*    background-color : white;*/
+/*}*/
 .project-display .author {
     display : inline-block;
 }
 .project-display .date {
     margin-bottom : 20px;
     display : inline-block;
+}
+.project-display .module-body {
+    padding-top : 10px;
 }
 .project-display .link {
     text-align : right;
