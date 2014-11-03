@@ -4,7 +4,7 @@
         <div class="newsItem pdng-l" ng-repeat="newsItem in news">
             <div class="title fnt-l "> <a ng-href="{{newsItem.link}}"><span class="icon-bullhorn"></span>{{newsItem.title}}</a></div>
             <div class="date"> {{newsItem.date | date : 'yyyy-MM-dd'}}</div>
-            <div class="description"> {{newsItem.description}}</div>
+            <div class="description" ng-bind-html="newsItem.description"></div>
             <div class="author"> {{newsItem.author}}</div>
         </div>
     </div>
