@@ -21,7 +21,19 @@
 /*    background-color : white;*/
 /*}*/
 .project-display .author {
+    /*display : inline-block;*/
+}
+.project-display .title {
     display : inline-block;
+}
+.project-display .repo {
+    margin-left : 10px;
+    display : inline-block;
+}
+.project-display .repo span{
+    position : relative;
+    left   : 5px;
+    bottom : 2px;
 }
 .project-display .date {
     margin-bottom : 20px;

@@ -1,7 +1,8 @@
 <div class="project-display main-brdr">
     <div class="title fnt-xxl">{{project.title}}</div>
+    <a class="repo icon-github fnt-l" ng-href="{{project.git_link}}" target="_blank"><span>code</span></a>
     <div class="author">{{project.author}}</div>
-    <div class="date">{{project.date | date : 'yyyy-MM-dd'}}</div>
+    <!--<div class="date">{{project.date | date : 'yyyy-MM-dd'}}</div>-->
     <div class="module-body pdng-xl main-bgclr-alt2">
         <div class="description fnt-m" ng-bind-html="project.description"></div>
         <div class="link">
