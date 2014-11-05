@@ -1,7 +1,7 @@
 angular.module('projectX')
     .controller('ContactsCtrl', function($scope, $state, MessageService) {
         $scope.message = {
-            category : 'none'
+            topic : 'feedback'
         };
 
         $scope.send = function () {
