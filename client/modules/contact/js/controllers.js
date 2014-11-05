@@ -1,12 +1,18 @@
 angular.module('projectX')
-    .controller('ContactsCtrl', function($scope, $state, MessageService) {
-        $scope.message = {
-            topic : 'feedback'
-        };
+    .controller('ContactsCtrl', function($scope, $state, $timeout, MessageService) {
+        $scope.saving  = false;
+        $scope.message = {};
 
         $scope.send = function () {
-           MessageService.save($scope.message, function() {
-               $scope.message = {};
-           });
+            $scope.saving = true; 
+            MessageService.save($scope.message, function(response) {
+                if (response.success) {
+                    $scope.message = {};
+                    $scope.contactForm.$setPristine();
+                    $timeout(function () {
+                        $scope.saving = false;
+                    }, 1000);
+                }
+            });
         }
     });

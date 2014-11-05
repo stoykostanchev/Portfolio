@@ -7,3 +7,18 @@
 .module-contact h1{
     margin-top : 0px;
 }
+
+
+.sample-show-hide {
+    padding   : 5px;
+    font-style: italic;
+}
+
+.sample-show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.sample-show-hide.ng-hide {
+  opacity:0;
+}

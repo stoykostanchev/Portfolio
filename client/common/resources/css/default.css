@@ -24,3 +24,6 @@
     margin : 0px 0px 20px 0px;
     font-weight : bold;
 }
+input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
+  border: 1px solid #DA0505;
+}
