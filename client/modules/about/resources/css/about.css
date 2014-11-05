@@ -4,8 +4,14 @@
 .module-about-picture {
     height : 200px;
     border : solid 1px rgb(190, 155, 170);
-    margin : 25px 0 25px 25px;
+    margin : 30px 30px 30px 0;
+    float  : left;
+    /*display : inline;*/
 }
 .module-about-info {
     overflow : auto;
+}
+.module-about-info .content {
+    padding-top : 40px;
+    padding-bottom: 30px;
 }
