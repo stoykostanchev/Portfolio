@@ -20,3 +20,7 @@
     overflow: auto; 
     padding : 40px;
 }
+.module-title {
+    margin : 0px 0px 20px 0px;
+    font-weight : bold;
+}
