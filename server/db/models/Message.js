@@ -1,5 +1,11 @@
-module.exports = function (data) {
-    this.save = function () {
-        //model would save at this point
-    };
-};
+var mongoose = require('mongoose'),
+    msgSchema = new mongoose.Schema({
+        date   : { 
+            type   : Date, 
+            default: Date.now 
+        },
+        message: String, 
+        email  : String,
+        name   : String
+    });
+module.exports = mongoose.model('message', msgSchema);
