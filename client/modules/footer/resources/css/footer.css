@@ -5,11 +5,15 @@
 	bottom    : 0;
 	left      : 0;
 	padding   : 25px;
-    height    : 80px;
+    height    : 110px;
     width     : 100%;
     text-align: center;
 }
 
-.footer a:last-child {
+.footer img {
     margin-left : 20px;
+}
+
+.footer .addthis_sharing_toolbox {
+    margin-top : 8px;
 }

@@ -50,3 +50,6 @@
 .tutor-entry .description {
     margin : 10px 0;
 }
+.tutorial-display .sharing {
+    float : right;
+}

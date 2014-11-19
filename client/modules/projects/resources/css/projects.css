@@ -40,9 +40,13 @@
     display : inline-block;
 }
 .project-display .module-body {
-    padding-top : 10px;
+    /*padding-top : 10px;*/
 }
 .project-display .link {
     text-align : right;
     margin-top : 20px;
+}
+
+.project-display .sharing {
+    float : right;
 }
