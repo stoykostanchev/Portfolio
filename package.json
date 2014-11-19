@@ -1,7 +1,13 @@
 {
-  "name": "ProjectX",
+  "name": "Mindcache",
   "dependencies": {
     "body-parser": "^1.8.2",
     "express": "^4.9.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1"
   }
 }
