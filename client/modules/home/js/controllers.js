@@ -1,4 +1,6 @@
 angular.module('projectX')
-    .controller('NewsCtrl', function($scope, NewsService, $stateParams) {
-        $scope.news = NewsService.query();
-    });
+    .controller('NewsCtrl', ['$scope', 'NewsService', '$stateParams',
+        function($scope, NewsService, $stateParams) {
+            $scope.news = NewsService.query();
+        }
+    ]);
