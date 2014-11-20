@@ -8,8 +8,9 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    'client/app.js',
-                    'client/modules/**/*.js',
+                    'client/app/app.js',
+                    'client/app/**/*.js',
+                    'client/components/**/*.js',
                     'client/common/**/*.js'
                 ],
                 dest: 'client/build/<%= pkg.name %>.js'
@@ -17,7 +18,8 @@ module.exports = function (grunt) {
             styles: {
                 src: [
                     'client/common/resources/css/*.css',
-                    'client/modules/**/*.css',
+                    'client/app/**/*.css',
+                    'client/components/**/*.css',
                     '!client/common/resources/css/icons.css'
                 ],
                 dest: 'client/build/<%= pkg.name %>.css'
