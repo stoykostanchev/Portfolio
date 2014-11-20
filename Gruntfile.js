@@ -46,13 +46,25 @@ module.exports = function (grunt) {
                 options: {
                   reload: true
                 }
+            },
+            dependencies : {
+                files: ['Gruntfile.js'],
+                tasks: ['concat', 'uglify']
             }
+        },
+        wiredep: {
+          task: {
+            src: [
+              'client/index.html'
+            ]
+          }
         }
     });
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-wiredep');
     // Default task(s).
     grunt.registerTask('default', ['concat','uglify']);
 }
