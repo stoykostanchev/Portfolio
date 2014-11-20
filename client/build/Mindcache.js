@@ -7,15 +7,15 @@ angular.module('projectX',
         url    : '/blog',
         views  : { 
             ''           : { 
-                templateUrl : "modules/blog/blog.html"
+                templateUrl : "app/blog/blog.html"
             },
             'list@blog' : {
-                templateUrl : 'modules/blog/views/list.html',
+                templateUrl : 'app/blog/list/list.html',
                 controller  : 'PostsController'
             },
             'post@blog' : {
-                templateUrl : 'modules/blog/views/display.html',
-                controller  : 'LastestPostCtrl'
+                templateUrl : 'app/blog/post/post.html',
+                controller  : 'LatestPostCtrl'
             }
         }
     })
@@ -23,8 +23,8 @@ angular.module('projectX',
         url    : '/post/{postUrlId}',
         views  : { 
             'post@blog' : {
-                templateUrl : 'modules/blog/views/display.html',
-                controller  : 'PostDisplayCtrl'
+                templateUrl : 'app/blog/post/post.html',
+                controller  : 'PostCtrl'
             }
         }
     })
@@ -32,10 +32,10 @@ angular.module('projectX',
         url   : '/home',
         views : {
             '' : {
-                templateUrl : 'modules/home/home.html'
+                templateUrl : 'app/home/home.html'
             },
             'news@home' : {
-                templateUrl : 'modules/home/views/news.html',
+                templateUrl : 'app/home/news/news.html',
                 controller  : 'NewsCtrl'
             }
         }
@@ -48,7 +48,7 @@ angular.module('projectX',
             }, 
             'mainview@tutor' :{
                 controller  : 'TutorsController',
-                templateUrl : 'modules/tutor/views/search.html'
+                templateUrl : 'app/tutorials/tutorials.html'
             }
         }
     })
@@ -57,14 +57,14 @@ angular.module('projectX',
         views       : {
             'mainview@tutor' : {
                 controller  : 'TutorCtrl',
-                templateUrl : 'modules/tutor/views/tutorial.html'
+                templateUrl : 'app/tutorials/tutorial/tutorial.html'
             }
         }
     })
     .state('contact', {
         url         : '/contact',
         controller  : 'ContactsCtrl',
-        templateUrl : 'modules/contact/contact.html'
+        templateUrl : 'app/contact/contact.html'
     })
     .state('projects', {
         url      : '/projects',
@@ -73,8 +73,8 @@ angular.module('projectX',
                 template : '<div ui-view="view" class="module main-brdr module-projects main-bgclr-alt"></div>'  
             },
             'view@projects' : {
-                templateUrl : 'modules/projects/views/extendedList.html',
-                controller  : 'ProjectsExtendedListController'
+                templateUrl : 'app/projects/list/list.html',
+                controller  : 'ProjectsListCtrl'
             }
         }
     })
@@ -82,14 +82,14 @@ angular.module('projectX',
         url : '^/project/:projectId',
         views  : { 
             'view@projects' : {
-                templateUrl : 'modules/projects/views/display.html',
-                controller  : 'ProjectDisplayController'
+                templateUrl : 'app/projects/project/project.html',
+                controller  : 'ProjectCtrl'
             }
         }
     })
     .state('about', {
         url : '/about',
-        templateUrl : 'modules/about/about.html'
+        templateUrl : 'app/about/about.html'
     });;
 }]);
 angular.module('projectX')
@@ -99,13 +99,34 @@ angular.module('projectX')
             $scope.posts = BlogService.query({ fields : "url_id date title"});
         }
     ]);
-    
+angular.module('projectX')
+    .factory('BlogService', ['$resource', 
+        function ($resource) {
+            var blog_RES = $resource('/server/api/post/:postUrlId', {}, {
+                    getLatest : {
+                        url : '/server/api/post/latest',
+                        isArray : false
+                    }
+                });
+            
+            return blog_RES; 
+        }
+    ]);
+
 function setActivePost($scope, $sce, post) {
     $scope.post = post;
     $scope.trustedContent = $sce.trustAsHtml(post.content);
 }
 angular.module('projectX')
-    .controller('LastestPostCtrl', ['$scope', '$state', '$sce', 'BlogService',
+    .controller('PostCtrl', ['$scope', '$stateParams', 'BlogService', '$sce',
+        function($scope, $stateParams, BlogService, $sce) {
+            BlogService.get({ postUrlId : $stateParams.postUrlId }, function ( post ) {
+                setActivePost($scope, $sce, post);    
+            });
+        }   
+    ]);
+angular.module('projectX')
+    .controller('LatestPostCtrl', ['$scope', '$state', '$sce', 'BlogService',
         function($scope, $state, $sce, BlogService) {
             BlogService.getLatest(function(post) {
                 setActivePost($scope, $sce, post);
@@ -115,30 +136,6 @@ angular.module('projectX')
                     { notify : false   }
                 );
             });
-        }
-    ]);
-    
-angular.module('projectX')
-    .controller('PostDisplayCtrl', ['$scope', '$stateParams', 'BlogService', '$sce',
-        function($scope, $stateParams, BlogService, $sce) {
-            BlogService.get({ postUrlId : $stateParams.postUrlId }, function ( post ) {
-                setActivePost($scope, $sce, post);    
-            });
-        }   
-    ]);
-
-
-angular.module('projectX')
-    .factory('BlogService', ['$resource', 
-        function ($resource) {
-            var blog_RES = $resource('/server/API/REST/post/:postUrlId', {}, {
-                    getLatest : {
-                        url : '/server/API/REST/post/latest',
-                        isArray : false
-                    }
-                });
-            
-            return blog_RES; 
         }
     ]);
 angular.module('projectX')
@@ -164,7 +161,7 @@ angular.module('projectX')
 angular.module('projectX')
      .factory('MessageService', ['$resource', 
           function ($resource) {
-              var contact_RES = $resource('/server/API/REST/message/', {});
+              var contact_RES = $resource('/server/api/message/', {});
              
              return contact_RES; 
           }
@@ -179,9 +176,71 @@ angular.module('projectX')
 angular.module('projectX')
     .factory('NewsService', ['$resource', 
         function ($resource) {
-            var news_RES = $resource('/server/API/REST/news/:newsId', {});
+            var news_RES = $resource('/server/api/news/:newsId', {});
             
             return news_RES; 
+        }
+    ]);
+angular.module('projectX')
+    .controller('ProjectsListCtrl',['$scope', 'ProjectsService', 
+        function($scope, ProjectsService) {
+            $scope.projects = ProjectsService.query();
+        }
+    ]);
+
+
+angular.module('projectX')
+    .controller('ProjectCtrl', ['$scope', 'ProjectsService', '$stateParams',
+        function($scope, ProjectsService, $stateParams) {
+            $scope.project = ProjectsService.get({ projectId : $stateParams.projectId });
+        }
+    ]);
+angular.module('projectX')
+    .factory('ProjectsService', ['$resource', 
+        function ($resource) {
+            var project_RES = $resource('/server/api/project/:projectId', {});
+            
+            return project_RES; 
+        }
+    ]);
+angular.module('projectX')
+    .controller('TutorCtrl', ['$scope', 'TutorService', '$stateParams',
+        function($scope, TutorService, $stateParams) {
+            $scope.tutorial = TutorService.get({ urlId : $stateParams.urlId });
+        }
+    ])
+angular.module('projectX')
+     .factory('TutorService', ['$resource', 
+          function ($resource) {
+              var tutor_RES = $resource('/server/api/tutorial/:urlId', {});
+             
+             return tutor_RES; 
+          }
+     ]);
+angular.module('projectX')
+    .controller('TutorsController', ['$scope', 'TutorService',
+        function($scope, TutorService) {
+            $scope.order = 'date';
+            $scope.reverse = false;
+            $scope.search = {};
+            $scope.categories = []; 
+            
+            $scope.tutorials = TutorService.query(function (tutorials) {
+                var len  = tutorials.length,
+                    cats = [],
+                    cats_map = {},
+                    cur_cat;
+                
+                while (len--) {
+                    cur_cat = tutorials[len].category;
+    
+                    if(!cats_map[cur_cat]) {
+                        cats_map[cur_cat] = true;
+                        cats.push({name : tutorials[len].category});
+                    }
+                }
+                $scope.categories = cats;
+            });
         }
     ]);
 angular.module('projectX')
@@ -225,31 +284,10 @@ angular.module('projectX')
        return navService;
     });
 angular.module('projectX')
-    .controller('ProjectsExtendedListController',['$scope', 'ProjectsService', 
-        function($scope, ProjectsService) {
-            $scope.projects = ProjectsService.query();
-        }
-    ]);
-
-angular.module('projectX')
-    .controller('ProjectDisplayController', ['$scope', 'ProjectsService', '$stateParams',
-        function($scope, ProjectsService, $stateParams) {
-            $scope.project = ProjectsService.get({ projectId : $stateParams.projectId });
-        }
-    ]);
-angular.module('projectX')
-    .factory('ProjectsService', ['$resource', 
-        function ($resource) {
-            var project_RES = $resource('/server/API/REST/project/:projectId', {});
-            
-            return project_RES; 
-        }
-    ]);
-angular.module('projectX')
     .directive('sitesForSharing', ['$location', 
         function($location) {
             function link(scope, element, attrs) {
-                var refresh = addthis.layers.refresh;
+                var refresh = addthis && addthis.layers.refresh;
                 //see http://support.addthis.com/customer/portal/articles/1692927-using-dashboard-configuration-tools-dynamically
                 if (refresh) {
                     refresh();
@@ -265,8 +303,7 @@ angular.module('projectX')
                         tpl += 'data-url="' + $location.host()+'"';
                     }
                     tpl += '></div>';
-                    console.log(tpl)
-    
+ 
                     return tpl;
                 },
                 link: link
@@ -274,45 +311,6 @@ angular.module('projectX')
         }
     ]);
 
-angular.module('projectX')
-    .controller('TutorCtrl', ['$scope', 'TutorService', '$stateParams',
-        function($scope, TutorService, $stateParams) {
-            $scope.tutorial = TutorService.get({ urlId : $stateParams.urlId });
-        }
-    ])
-    .controller('TutorsController', ['$scope', 'TutorService',
-        function($scope, TutorService) {
-            $scope.order = 'date';
-            $scope.reverse = false;
-            $scope.search = {};
-            $scope.categories = []; 
-            
-            $scope.tutorials = TutorService.query(function (tutorials) {
-                var len  = tutorials.length,
-                    cats = [],
-                    cats_map = {},
-                    cur_cat;
-                
-                while (len--) {
-                    cur_cat = tutorials[len].category;
-    
-                    if(!cats_map[cur_cat]) {
-                        cats_map[cur_cat] = true;
-                        cats.push({name : tutorials[len].category});
-                    }
-                }
-                $scope.categories = cats;
-            });
-        }
-    ]);
-angular.module('projectX')
-     .factory('TutorService', ['$resource', 
-          function ($resource) {
-              var tutor_RES = $resource('/server/API/REST/tutorial/:urlId', {});
-             
-             return tutor_RES; 
-          }
-     ]);
 angular.module('projectX')
     .directive('backButton',[
         '$window', 

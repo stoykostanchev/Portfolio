@@ -1,0 +1,17 @@
+.blog-list-view {
+    width: 300px; 
+    float: right; 
+    min-height: 200px; 
+}
+
+.blog-list-results a{
+    display : block;
+}
+.blog-list-results .active{
+    cursor : default;
+    color  : black;
+    
+}
+.blog-list {
+    margin : 70px 0 0 10px;
+}
