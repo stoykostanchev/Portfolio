@@ -1,7 +1,30 @@
 module.exports = function (grunt) {
     // Project configuration.
+    var pkg = require('./package.json');
+    
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        pkg: pkg,
+        buildcontrol: {
+            options: {
+              dir: 'client/dist',
+              commit: true,
+              push: true,
+              message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+            },
+            heroku: {
+              options: {
+                remote: 'git@heroku.com:mindcache.git',
+                branch: 'master',
+                tag: pkg.version
+              }
+            },
+            local: {
+              options: {
+                remote: '../../',
+                branch: 'dist'
+              }
+            }
+        },
         concat: {
             options: {
                 separator: '\n'
@@ -12,7 +35,7 @@ module.exports = function (grunt) {
                     'client/app/**/*.js',
                     'client/components/**/*.js'
                 ],
-                dest: 'client/build/<%= pkg.name %>.js'
+                dest: 'client/dist/<%= pkg.name %>.js'
             },
             styles: {
                 src: [
@@ -21,7 +44,7 @@ module.exports = function (grunt) {
                     'client/components/**/*.css',
                     '!client/assets/styles/icons.css'
                 ],
-                dest: 'client/build/<%= pkg.name %>.css'
+                dest: 'client/dist/<%= pkg.name %>.css'
             }
         },
         uglify: {
@@ -30,7 +53,7 @@ module.exports = function (grunt) {
             },
             build: {
                 src: '<%= concat.dist.src %>',
-                dest: 'client/build/<%= pkg.name %>.min.js'
+                dest: 'client/dist/<%= pkg.name %>.min.js'
             }
         },
         watch: {
@@ -62,7 +85,14 @@ module.exports = function (grunt) {
         }
     });
     // Load the plugins
-    require('jit-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+        buildcontrol: 'grunt-build-control'
+    });
     // Default task(s).
-    grunt.registerTask('default', ['concat','uglify']);
+    grunt.registerTask('default', [
+        'concat','uglify'
+    ]);
+    grunt.registerTask('build', [
+      'concat','uglify'
+    ]);
 }
