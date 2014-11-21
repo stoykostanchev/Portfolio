@@ -244,6 +244,24 @@ angular.module('projectX')
         }
     ]);
 angular.module('projectX')
+    .directive('backButton',[
+        '$window', 
+        function($window){
+            return {
+              restrict: 'A',
+         
+              link: function(scope, element, attrs) {
+                element.bind('click', goBack);
+                element.addClass('back-btn');
+
+                function goBack() {
+                  $window.history.back();
+                }
+              }
+            }
+        }
+    ]);
+angular.module('projectX')
     .controller('NavigatorController', ['$scope', 'NavigationService', '$location', 
         function ($scope, NavigationService, $location) {
             var cats       = NavigationService.getMainNavItems();
@@ -308,24 +326,5 @@ angular.module('projectX')
                 },
                 link: link
             };
-        }
-    ]);
-
-angular.module('projectX')
-    .directive('backButton',[
-        '$window', 
-        function($window){
-            return {
-              restrict: 'A',
-         
-              link: function(scope, element, attrs) {
-                element.bind('click', goBack);
-                element.addClass('back-btn');
-
-                function goBack() {
-                  $window.history.back();
-                }
-              }
-            }
         }
     ]);

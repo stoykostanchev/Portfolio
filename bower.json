@@ -22,7 +22,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "client/vendors/",
+    "client/bower_components/",
     "test",
     "tests"
   ],

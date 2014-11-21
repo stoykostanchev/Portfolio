@@ -10,17 +10,16 @@ module.exports = function (grunt) {
                 src: [
                     'client/app/app.js',
                     'client/app/**/*.js',
-                    'client/components/**/*.js',
-                    'client/common/**/*.js'
+                    'client/components/**/*.js'
                 ],
                 dest: 'client/build/<%= pkg.name %>.js'
             },
             styles: {
                 src: [
-                    'client/common/resources/css/*.css',
+                    'client/assets/styles/*.css',
                     'client/app/**/*.css',
                     'client/components/**/*.css',
-                    '!client/common/resources/css/icons.css'
+                    '!client/assets/styles/icons.css'
                 ],
                 dest: 'client/build/<%= pkg.name %>.css'
             }
