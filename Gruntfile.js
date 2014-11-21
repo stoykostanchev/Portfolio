@@ -62,11 +62,8 @@ module.exports = function (grunt) {
           }
         }
     });
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-wiredep');
+    // Load the plugins
+    require('jit-grunt')(grunt);
     // Default task(s).
     grunt.registerTask('default', ['concat','uglify']);
 }
