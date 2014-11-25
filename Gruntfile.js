@@ -222,10 +222,10 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/public/{,*/}*.js',
-            '<%= yeoman.dist %>/public/{,*/}*.css',
-            '!<%= yeoman.dist %>/public/assets/{,*/}*',
-            '!<%= yeoman.dist %>/public/app/vendor.{js,css}'
+            '<%= yeoman.dist %>/client/{,*/}*.js',
+            '<%= yeoman.dist %>/client/{,*/}*.css',
+            '!<%= yeoman.dist %>/client/assets/{,*/}*',
+            '!<%= yeoman.dist %>/client/app/vendor.{js,css}'
           ]
         }
       }
@@ -237,19 +237,19 @@ module.exports = function (grunt) {
     useminPrepare: {
       html: ['<%= yeoman.client %>/index.html'],
       options: {
-        dest: '<%= yeoman.dist %>/public'
+        dest: '<%= yeoman.dist %>/client'
       }
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
-      js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
+      html: ['<%= yeoman.dist %>/client/{,*/}*.html'],
+      css: ['<%= yeoman.dist %>/client/{,*/}*.css'],
+      js: ['<%= yeoman.dist %>/client/{,*/}*.js'],
       options: {
         assetsDirs: [
-          '<%= yeoman.dist %>/public',
-          '<%= yeoman.dist %>/public/assets/images'
+          '<%= yeoman.dist %>/client',
+          '<%= yeoman.dist %>/client/assets/images'
         ],
         // This is so we update image references in our ng-templates
         patterns: {
@@ -267,7 +267,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.client %>/assets/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/public/assets/images'
+          dest: '<%= yeoman.dist %>/client/assets/images'
         }]
       }
     },
@@ -278,7 +278,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.client %>/assets/images',
           src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/public/assets/images'
+          dest: '<%= yeoman.dist %>/client/assets/images'
         }]
       }
     },
@@ -327,7 +327,7 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= yeoman.dist %>/public/*.html']
+        html: ['<%= yeoman.dist %>/client/*.html']
       }
     },
 
@@ -338,7 +338,7 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.client %>',
-          dest: '<%= yeoman.dist %>/public',
+          dest: '<%= yeoman.dist %>/client',
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
@@ -350,7 +350,7 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/public/assets/images',
+          dest: '<%= yeoman.dist %>/client/assets/images',
           src: ['generated/*']
         }, {
           expand: true,
@@ -598,7 +598,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+    // 'cdnify',
     'cssmin',
     'uglify',
     'rev',
