@@ -3,25 +3,74 @@
     <head>
         <title>Mindcache</title>
         <link rel='stylesheet' type='text/css' href='bower_components/bootstrap/dist/css/bootstrap.css'>
-        <link rel='stylesheet' type='text/css' href='assets/styles/icons.css'>
-        <link rel='stylesheet' type='text/css' href='dist/Mindcache.css'>
+        <!-- build:css app/app.css -->
+        <!-- injector:css -->
+        <link rel="stylesheet" href="app/about/about.css">
+        <link rel="stylesheet" href="app/app.css">
+        <link rel="stylesheet" href="app/blog/list/list.css">
+        <link rel="stylesheet" href="app/blog/post/post.css">
+        <link rel="stylesheet" href="app/contact/contact.css">
+        <link rel="stylesheet" href="app/home/home.css">
+        <link rel="stylesheet" href="app/home/news/news.css">
+        <link rel="stylesheet" href="app/projects/project/projects.css">
+        <link rel="stylesheet" href="app/tutorials/tutorial/tutorial.css">
+        <link rel="stylesheet" href="assets/styles/common.css">
+        <link rel="stylesheet" href="assets/styles/default.css">
+        <link rel="stylesheet" href="assets/styles/icons.css">
+        <link rel="stylesheet" href="assets/styles/resets.css">
+        <link rel="stylesheet" href="components/footer/footer.css">
+        <link rel="stylesheet" href="components/navigation/navigation.css">
+        <!-- endinjector -->
+        <!-- endbuild -->
+        <!-- build:css assets/styles/base.css -->
+        <link rel="stylesheet" href="assets/styles/common.css">
+        <link rel="stylesheet" href="assets/styles/default.css">
+        <link rel="stylesheet" href="assets/styles/icons.css">
+        <link rel="stylesheet" href="assets/styles/resets.css">
+        <!-- endbuild -->
     </head> 	
     <body class="main-bgclr" ng-app='projectX'>
         <div class="wrapper">
-            <div ng-include="'/components/navigation/navigation.html'"></div>
+            <div ng-include="'components/navigation/navigation.html'"></div>
             <div ui-view class="main-view"></div>
-            <div ng-include="'/components/footer/footer.html'"></div>
+            <div ng-include="'components/footer/footer.html'"></div>
         </div>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5465af3b0b83920f" async="async"></script>
+        <!-- build:js app/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/lodash/dist/lodash.compat.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
         <!-- endbower -->
-        <script type="text/javascript" src="/dist/Mindcache.min.js"></script>
+        <!-- endbuild -->
+        <!-- build:js app/app.js -->
+        <script src="app/app.js"></script>
+        <!-- injector:js -->
+        <script src="app/blog/blog.controller.js"></script>
+        <script src="app/blog/blog.service.js"></script>
+        <script src="app/blog/list/list.controller.js"></script>
+        <script src="app/blog/post/post.controller.js"></script>
+        <script src="app/contact/contact.controller.js"></script>
+        <script src="app/contact/contact.service.js"></script>
+        <script src="app/home/news/news.controller.js"></script>
+        <script src="app/home/news/news.service.js"></script>
+        <script src="app/projects/list/list.controller.js"></script>
+        <script src="app/projects/project/project.controller.js"></script>
+        <script src="app/projects/project/project.service.js"></script>
+        <script src="app/tutorials/tutorial/tutorial.controller.js"></script>
+        <script src="app/tutorials/tutorial/tutorial.service.js"></script>
+        <script src="app/tutorials/tutorials.controller.js"></script>
+        <script src="components/navigation/backButton/backButton.directive.js"></script>
+        <script src="components/navigation/navigation.controller.js"></script>
+        <script src="components/navigation/navigation.service.js"></script>
+        <script src="components/sharing/sharing.directive.js"></script>
+        <!-- endinjector -->
+        <!-- endbuild -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5465af3b0b83920f" async="async"></script>
    </body>
 </html>
