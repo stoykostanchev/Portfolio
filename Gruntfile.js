@@ -221,8 +221,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/client/{,*/}*.js',
-            '<%= yeoman.dist %>/client/{,*/}*.css',
+            '<%= yeoman.dist %>/client/{,*/}*.{js,css}',
             '!<%= yeoman.dist %>/client/assets/{,*/}*',
             '!<%= yeoman.dist %>/client/app/vendor.{js,css}'
           ]
@@ -342,7 +341,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'assets/**/*',
+            'assets/{images,fonts}/**/*',
             'index.html'
           ]
         }, {
