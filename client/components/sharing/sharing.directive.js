@@ -2,7 +2,7 @@ angular.module('projectX')
     .directive('sitesForSharing', ['$location', 
         function($location) {
             function link(scope, element, attrs) {
-                var refresh = addthis && addthis.layers.refresh;
+                var refresh = ("undefined"!=typeof addthis) && addthis.layers.refresh;
                 //see http://support.addthis.com/customer/portal/articles/1692927-using-dashboard-configuration-tools-dynamically
                 if (refresh) {
                     refresh();
