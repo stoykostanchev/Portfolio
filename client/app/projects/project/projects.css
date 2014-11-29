@@ -32,8 +32,8 @@
 }
 .project-display .repo span{
     position : relative;
-    left   : 5px;
-    bottom : 2px;
+    left   : -5px;
+    bottom : -2px;
 }
 .project-display .date {
     margin-bottom : 20px;
