@@ -31,9 +31,9 @@
     </head> 	
     <body class="main-bgclr" ng-app='projectX'>
         <div class="wrapper">
-            <div ng-include="'components/navigation/navigation.html'"></div>
-            <div ui-view class="main-view"></div>
-            <div ng-include="'components/footer/footer.html'"></div>
+            <div main-navigation></div>
+            <section ui-view class="main-view"></section>
+            <div main-footer></div>
         </div>
         <!-- build:js app/vendor.js -->
         <!-- bower:js -->
@@ -65,8 +65,10 @@
         <script src="app/tutorials/tutorial/tutorial.controller.js"></script>
         <script src="app/tutorials/tutorial/tutorial.service.js"></script>
         <script src="app/tutorials/tutorials.controller.js"></script>
+        <script src="components/footer/footer.directive.js"></script>
         <script src="components/navigation/backButton/backButton.directive.js"></script>
         <script src="components/navigation/navigation.controller.js"></script>
+        <script src="components/navigation/navigation.directive.js"></script>
         <script src="components/navigation/navigation.service.js"></script>
         <script src="components/sharing/sharing.directive.js"></script>
         <!-- endinjector -->
