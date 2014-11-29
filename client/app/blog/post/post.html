@@ -1,9 +1,9 @@
 <div class="blog-post">
-    <div class="blog-post-header">
-        <div class="title fnt-xxl">{{post.title}}</div>
+    <header class="blog-post-header">
+        <h1 class="title fnt-xxl">{{post.title}}</h1>
         <p class="author" >{{post.author}}</p>
-        <p class="date"   >{{post.date | date : 'yyyy-MM-dd'}}</p>
-    </div>
+        <time class="date"   >{{post.date | date : 'yyyy-MM-dd'}}</time>
+    </header>
     <div class="module-body blog-post-body main-brdr main-bgclr-alt2 pdng-xl fnt-m">
         <sites-for-sharing></sites-for-sharing>
         <p class="content" ng-bind-html="trustedContent"></p>
