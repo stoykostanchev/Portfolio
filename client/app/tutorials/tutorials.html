@@ -1,31 +1,31 @@
-<div>
-    <!-- Controls - filters, sorters etc. -->
-    <form class="controls form-inline" role="form">
-        <div class="form-group filters">
-            <label for="category">Category</label>
-            <select class="form-control" id="category" ng-model="search.category">
-              <option value="">- Any -</option>
-              <option ng-repeat="cat in categories" value="{{cat.name}}">{{cat.name}}</option>
-            </select>
-        </div>
-        <div class="form-group sorters">
-            <label for="sorter">Sort by</label>
-            <select class="form-control" id="sorter" ng-model="order">
-              <option value="date"> Date </option>
-              <option ng-repeat="(key, val) in categories[0]" >{{key}}</option>
-            </select>
-            <div class="glyphicon" ng-click='reverse=!reverse' ng-class="{true : 'glyphicon-sort-by-alphabet' , false : 'glyphicon-sort-by-alphabet-alt'}[reverse]"></div>
-        </div>
-        <input class="search" type="text" placeholder=" - Search -" name="word" ng-model="search.description"/>
-    </form>
-    <!-- Tutorials found display -->
-    <div class="tutor-results">
-        <div class="tutor-entry module-body main-bgclr-alt2" ng-repeat="tutorial in tutorials | orderBy: order : reverse | filter : search">
-            <div class="title"> {{tutorial.title}}</div>
-            <div class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</div>
-            <div class="author"> {{tutorial.author}}</div>
-            <div class="description" ng-bind-html="tutorial.short_description"></div>
-            <a class="more" ui-sref="tutor.display({ urlId : tutorial.url_id})"> Read more</div>
-        </div>
+<!-- Controls - filters, sorters etc. -->
+<form class="controls form-inline" role="form">
+    <div class="form-group filters">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" ng-model="search.category">
+          <option value="">- Any -</option>
+          <option ng-repeat="cat in categories" value="{{cat.name}}">{{cat.name}}</option>
+        </select>
     </div>
-</div>
+    <div class="form-group sorters">
+        <label for="sorter">Sort by</label>
+        <select class="form-control" id="sorter" ng-model="order">
+          <option value="date"> Date </option>
+          <option ng-repeat="(key, val) in categories[0]" >{{key}}</option>
+        </select>
+        <div class="glyphicon" ng-click='reverse=!reverse' ng-class="{true : 'glyphicon-sort-by-alphabet' , false : 'glyphicon-sort-by-alphabet-alt'}[reverse]"></div>
+    </div>
+    <input class="search" type="text" placeholder=" - Search -" name="word" ng-model="search.description"/>
+</form>
+<!-- Tutorials found display -->
+<section class="tutor-results">
+    <article class="tutor-entry module-body main-bgclr-alt2" ng-repeat="tutorial in tutorials | orderBy: order : reverse | filter : search">
+        <header>
+            <h1 class="title"> {{tutorial.title}}</h1>
+            <time class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</time>
+            <p class="author"> {{tutorial.author}}</p>
+        </header>
+        <p class="description" ng-bind-html="tutorial.short_description"></p>
+        <a class="more" ui-sref="tutor.display({ urlId : tutorial.url_id})"> Read more</div>
+    </article>
+</section>
