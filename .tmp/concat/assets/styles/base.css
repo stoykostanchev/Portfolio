@@ -2670,7 +2670,7 @@ input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
 html, body{
   height:100%;
 }
-a:hover {
+a:hover, a:focus{
   cursor : pointer;
   text-decoration : none;  
 }
