@@ -1,0 +1,29 @@
+.news {
+    float   : right;
+    width   : 400px;
+    margin  : 20px 0 0 20px;
+    
+    .newsItem {
+        .description {
+            padding : 10px 0 0 20px;
+        }
+        .title {
+            a {
+                color : rgb(115, 40, 25);
+            }
+            a:hover {
+                color : red;
+            }
+            span{
+                position : relative;
+                top   : 2px;
+                right : 4px;
+            }
+        }
+        .author{
+            padding    : 10px 0 10px 0;
+            text-align : right;
+            border-bottom : 1px solid black;
+        }
+    }
+}

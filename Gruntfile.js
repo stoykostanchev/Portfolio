@@ -68,6 +68,18 @@ module.exports = function (grunt) {
         ],
         tasks: ['injector:css']
       },
+      injectSass: {
+        files: [
+          '<%= yeoman.client %>/{app,components,assets}/**/*.{scss,sass}',
+          '!<%= yeoman.client %>/app.scss'
+        ],
+        tasks: ['injector:sass']
+      },
+      sass: {
+        files: [
+          '<%= yeoman.client %>/{app,components,assets}/**/*.{scss,sass}'],
+        tasks: ['sass', 'autoprefixer']
+      },
       mochaTest: {
         files: ['server/**/*.spec.js'],
         tasks: ['env:test', 'mochaTest']
@@ -466,8 +478,42 @@ module.exports = function (grunt) {
             '<%= yeoman.client %>/{assets,app,components}/**/*.css'
           ]
         }
+      },
+      // Inject component scss into app.scss
+      sass: {
+        options: {
+          transform: function(filePath) {
+            filePath = filePath.replace('/client/app/', '');
+            filePath = filePath.replace('/client/', '../');
+            return '@import \'' + filePath + '\';';
+          },
+          starttag: '// injector',
+          endtag: '// endinjector'
+        },
+        files: {
+          '<%= yeoman.client %>/app/app.scss': [
+            '<%= yeoman.client %>/{app,assets,components}/**/*.{scss,sass}',
+            '!<%= yeoman.client %>/app/app.scss'
+          ]
+        }
       }
     },
+    // Compiles Sass to CSS
+    sass: {
+      server: {
+        options: {
+          loadPath: [
+            '<%= yeoman.client %>/bower_components',
+            '<%= yeoman.client %>/app',
+            '<%= yeoman.client %>/components'
+          ],
+          compass: false
+        },
+        files: {
+          '<%= yeoman.client %>/app.css' : '<%= yeoman.client %>/app/app.scss'
+        }
+      }
+    }
   });
 
   // Used for delaying livereload until after server has restarted
@@ -564,6 +610,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'injector:sass',
     'concurrent:dist',
     'injector',
     'wiredep',

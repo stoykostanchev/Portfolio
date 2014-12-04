@@ -1,0 +1,23 @@
+.contacts {
+   .btn {
+        float : right;
+    } 
+    textarea {
+        height : 250px;
+    }
+}
+.module-contact {
+    h1{
+        margin-top : 0px;
+    }
+}
+.sample-show-hide {
+    padding   : 5px;
+    font-style: italic;
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+    
+    .ng-hide {
+      opacity:0;
+    }
+}

@@ -1,4 +1,4 @@
-.footer {
+.footer{
     background-color : lightblue;
     box-shadow: -1px -5px 15px lightblue;
     position  : absolute;
@@ -8,12 +8,10 @@
     height    : 110px;
     width     : 100%;
     text-align: center;
-}
-
-.footer img {
-    margin-left : 20px;
-}
-
-.footer .addthis_sharing_toolbox {
-    margin-top : 8px;
+    img {
+        margin-left : 20px;
+    }
+    .addthis_sharing_toolbox {
+        margin-top : 8px;
+    }
 }

@@ -1,0 +1,42 @@
+.project {
+    .more {
+        display    : block;
+        text-align : right;
+    }
+   .title {
+        display : block;
+        margin-bottom : 10px;
+        
+        :hover {
+            color  : darkblue;
+            cursor : pointer;
+            text-decoration : none;
+        }
+    } 
+} 
+.project-display {
+   .title {
+        display : inline-block;
+    } 
+    .repo {
+        margin-left : 10px;
+        display : inline-block;
+        
+        span{
+            position : relative;
+            left   : -5px;
+            bottom : -2px;
+        }
+    }
+    .date {
+        margin-bottom : 20px;
+        display : inline-block;
+    }
+    .link {
+        text-align : right;
+        margin-top : 20px;
+    }
+    .sharing {
+        float : right;
+    }
+}

@@ -1,0 +1,56 @@
+.wrapper {
+    min-height : 100%;
+    position   : relative;
+    padding-bottom : 100px;
+}
+.main-view { 
+    overflow  : auto;
+    min-width : 495px;
+}
+.mrgn-s {margin :  5px;}
+.mrgn-m {margin : 10px;}
+.mrgn-l {margin : 15px;}
+.mrgn-xl{margin : 20px;}
+
+.pdng-s  {padding :  5px;}
+.pdng-m  {padding : 10px;}
+.pdng-l  {padding : 15px;}
+.pdng-xl {padding : 20px;}
+.pdng-xxl{padding : 25px;}
+
+.fnt-s  {font-size : 8px;}
+.fnt-m  {font-size : 14px;}
+.fnt-l  {font-size : 22px;}
+.fnt-xl {font-size : 28px;}
+.fnt-xxl{font-size : 36px;}
+
+
+.main-brdr {
+    /*border  : solid 1px black;*/
+    /*border-radius : 5px;*/
+}
+.main-bgclr     {background-color : #DEF0F8;}
+/*.main-bgclr     {background-color : black;}*/
+/*.main-bgclr-alt {background-color : #DEF0F8;}*/
+/*.main-bgclr-alt2{background-color : #FFC572;}*/
+.main-bgclr-alt2{background-color : white;}
+
+.module-body {
+    border      : solid 1px lightblue;
+    border-top  : 0px;
+    border-left : 0px;
+    margin-top  : 10px;
+    box-shadow  : 2px 3px 2px lightblue;
+    border-radius : 10px;
+}
+.module {
+    overflow: auto; 
+    padding : 40px;
+}
+.module-title {
+    margin : 0px 0px 20px 0px;
+    font-weight : bold;
+}
+input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
+  border: 1px solid #DA0505;
+}

@@ -1,0 +1,37 @@
+.navigator {  
+    padding    : 0px;
+    box-shadow : 1px 5px 15px lightblue;
+    margin-bottom   : 7px;
+    background-color: lightblue;
+}
+.nav-item {
+    display: inline-block;
+    cursor : pointer;
+    color  : rgb(51, 51, 51);
+    padding: 10px;
+    width  : 160px;
+    text-align  : center;
+    font-size   : 25px;
+    font-family : fantasy;
+    border-right: 3px dotted white;
+    vertical-align : bottom;
+}
+.nav-item.active {
+    color : white;
+    text-decoration : none;
+}
+.nav-item:hover {
+    @extend .nav-item.active;
+}
+.nav-item:focus {
+    @extend .nav-item;
+}
+.nav-blog {
+    border-left : dotted 3px white;
+}
+.nav-home {
+    border      : 0px;
+    font-family : icomoon;
+    font-size   : 65px;
+}
+
