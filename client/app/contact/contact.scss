@@ -7,8 +7,17 @@
     }
 }
 .module-contact {
+    @extend .module;
+    border : $main-brdr;
+    background-color : $main-bgclr-alt;
+    
     h1{
         margin-top : 0px;
+    }
+}
+.module-contact-text {
+    p, a {
+        font-size : $fnt-m;
     }
 }
 .sample-show-hide {
@@ -16,6 +25,7 @@
     font-style: italic;
     -webkit-transition:all linear 0.5s;
     transition:all linear 0.5s;
+    float : right;
     
     .ng-hide {
       opacity:0;

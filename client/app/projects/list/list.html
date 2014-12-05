@@ -1,14 +1,14 @@
-<div ng-repeat="project in projects" class="row" ng-if="$even">
-    <div class="col-md-6 pdng-l">
-        <article class="project module-body main-brdr pdng-l main-bgclr-alt2">
-            <h1><a class="title fnt-xl" ui-sref="projects.project({projectId : project.url_id})"> {{project.title}}</a></h1>
+<div ng-repeat="project in projects" class="project-list-entry row" ng-if="$even">
+    <div class="col-md-6">
+        <article class="project-body">
+            <h1><a class="title" ui-sref="projects.project({projectId : project.url_id})"> {{project.title}}</a></h1>
             <p class="description"> {{project.short_descr}} </p>
             <a class="more" ui-sref="projects.project({projectId : project.url_id})"> Read more </a>
         </article>
     </div>
-    <div class="col-md-6 pdng-l" ng-class='odd' ng-if="!$last && $even && projects[$index + 1]">
-        <article class="project main-brdr module-body pdng-l main-bgclr-alt2">
-            <h1><a class="title fnt-xl" ui-sref="projects.project({projectId : projects[$index + 1].url_id})"> {{projects[$index + 1].title}}</a></h1>
+    <div class="col-md-6" ng-class='odd' ng-if="!$last && $even && projects[$index + 1]">
+        <article class="project-body">
+            <h1><a class="title" ui-sref="projects.project({projectId : projects[$index + 1].url_id})"> {{projects[$index + 1].title}}</a></h1>
             <p class="description"> {{projects[$index + 1].short_descr }} </p>
             <a class="more" ui-sref="projects.project({projectId : projects[$index + 1].url_id})"> Read more <span>
         </article>

@@ -3,6 +3,18 @@
     box-shadow : 1px 5px 15px lightblue;
     margin-bottom   : 7px;
     background-color: lightblue;
+    
+    a {
+        @extend .nav-item;
+    }
+    a.nav-blog {
+        border-left : dotted 3px white;
+    }
+    a.nav-home {
+        border      : 0px;
+        font-family : icomoon;
+        font-size   : 65px;
+    }
 }
 .nav-item {
     display: inline-block;
@@ -26,12 +38,3 @@
 .nav-item:focus {
     @extend .nav-item;
 }
-.nav-blog {
-    border-left : dotted 3px white;
-}
-.nav-home {
-    border      : 0px;
-    font-family : icomoon;
-    font-size   : 65px;
-}
-

@@ -1,4 +1,4 @@
-<section class="module main-brdr module-contact main-bgclr-alt">
+<section class="module-contact">
     <div class="row">
         <form name="contactForm" novalidate class="contacts form-horizontal col-md-6" role="form">
             <h1 class="module-title">Leave a message</h1>
@@ -20,13 +20,13 @@
             <div class="form-group">
                 <div class="col-sm-10">
                     <button type="submit" ng-disabled="contactForm.$invalid" class="btn btn-default" ng-click='send()'>Send</button>
-                    <span style="float : right" class="check-element sample-show-hide" ng-show="saving">Thank you for your comment!</span> 
+                    <span class="sample-show-hide" ng-show="saving">Thank you for your comment!</span> 
                 </div>
             </div>
         </form>
         <section class="module-contact-text col-md-6">
             <h1 class="module-title">Call the author</h1>
-            <p class="fnt-m">+ 359 / 883 347 023 - <a href="#/about" class="fnt-m">Stoyko Stanchev</a></p>
+            <p>+ 359 / 883 347 023 - <a href="#/about">Stoyko Stanchev</a></p>
         </section>
     </div>
 </section>

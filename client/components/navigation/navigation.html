@@ -1,5 +1,5 @@
 <nav ng-controller="NavigatorController" class="navigator">
-    <a ui-sref-active="active" class="nav-item nav-{{cat.css ||cat.sref || cat.name.toLowerCase()}}" ui-sref="{{cat.sref || cat.name.toLowerCase()}}" role="button" ng-repeat="cat in categories">
+    <a ui-sref-active="active" class="nav-{{cat.css ||cat.sref || cat.name.toLowerCase()}}" ui-sref="{{cat.sref || cat.name.toLowerCase()}}" role="button" ng-repeat="cat in categories">
         {{cat.text || cat.name}}
     </a>
 </nav>

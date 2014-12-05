@@ -1,10 +1,7 @@
-.blog-list-view {
-    width: 300px; 
-    float: right; 
-    min-height: 200px; 
-}
-
 .blog-list-results {
+    padding : $pdng-m;
+    border  : $main-brdr;
+    
     a{
         display : block;
     }  

@@ -1,16 +1,16 @@
 <section class="tutorial-display">
-    <nav class="navigation fnt-l"> 
+    <nav class="navigation"> 
         <a href back-button> Tutorials </a>  / {{tutorial.category}} 
     </nav>
     <article class="tutorial">
         <header>
-            <h1 class="title fnt-xxl"> {{tutorial.title}}</h1>
+            <h1 class="title"> {{tutorial.title}}</h1>
             <p class="author"> {{tutorial.author}}</p>
             <time class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</time>
         </header>
-        <div class="tutorial-content pdng-l module-body main-bgclr-alt2">
+        <div class="tutorial-body">
             <sites-for-sharing></sites-for-sharing>
-            <p class="description fnt-m" ng-bind-html="tutorial.description"></p>
+            <p class="description" ng-bind-html="tutorial.description"></p>
         </div>
     </article>
 </section>

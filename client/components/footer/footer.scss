@@ -4,12 +4,12 @@
     position  : absolute;
 	bottom    : 0;
 	left      : 0;
-	padding   : 25px;
+	padding   : $pdng-xxl;
     height    : 110px;
     width     : 100%;
     text-align: center;
     img {
-        margin-left : 20px;
+        margin-left : $mrgn-xl;
     }
     .addthis_sharing_toolbox {
         margin-top : 8px;

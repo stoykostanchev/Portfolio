@@ -1,7 +1,16 @@
-.blog-post-view {
-    padding-right: 310px;
-    
-     .sharing {
+.blog-post-header {
+    H1 {
+        font-size : $fnt-xxl;
+    }
+}
+.blog-post-body {
+    @extend .module-body;
+    border  : $main-brdr;
+    padding : $pdng-xl;
+    font-size : $fnt-m;
+    background-color : $main-bgclr-alt2;
+
+    .sharing {
         float : right;
         margin: 0 0 15px 15px;
     }

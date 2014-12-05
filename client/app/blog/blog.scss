@@ -1,0 +1,13 @@
+.module-blog {
+    @extend .module;
+    border : $main-brdr;
+    background-color : $main-bgclr-alt;
+}
+.blog-list-view {
+    width: 300px; 
+    float: right; 
+    min-height: 200px; 
+}
+.blog-post-view {
+    padding-right: 310px;
+}

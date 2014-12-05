@@ -1,28 +1,13 @@
-.project {
-    .more {
-        display    : block;
-        text-align : right;
-    }
-   .title {
-        display : block;
-        margin-bottom : 10px;
-        
-        :hover {
-            color  : darkblue;
-            cursor : pointer;
-            text-decoration : none;
-        }
-    } 
-} 
-.project-display {
-   .title {
+.module-project-display {
+    .title {
         display : inline-block;
     } 
     .repo {
         margin-left : 10px;
         display : inline-block;
+        font-size : $fnt-l;
         
-        span{
+        span {
             position : relative;
             left   : -5px;
             bottom : -2px;
@@ -38,5 +23,25 @@
     }
     .sharing {
         float : right;
+    }
+}
+.module-projects-display-body {
+    @extend .module-body;
+    
+    .project {
+        .more {
+            display    : block;
+            text-align : right;
+        }
+       .title {
+            display : block;
+            margin-bottom : 10px;
+            
+            :hover {
+                color  : darkblue;
+                cursor : pointer;
+                text-decoration : none;
+            }
+        } 
     }
 }

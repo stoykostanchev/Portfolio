@@ -1,13 +1,12 @@
-<article class="project-display main-brdr">
+<article class="module-project-display">
     <header>
-        <h1 class="title fnt-xxl">{{project.title}}</h1>
-        <a class="repo fnt-l" ng-href="{{project.git_link}}" target="_blank"><span class="icon-github"></span>code</a>
+        <h1 class="title">{{project.title}}</h1>
+        <a class="repo" ng-href="{{project.git_link}}" target="_blank"><span class="icon-github"></span>code</a>
         <div class="author">{{project.author}}</div>    
     </header>
-    <!--<div class="date">{{project.date | date : 'yyyy-MM-dd'}}</div>-->
-    <div class="module-body pdng-xl main-bgclr-alt2">
+    <div class="module-projects-display-body">
         <sites-for-sharing></sites-for-sharing>
-        <p class="description fnt-m" ng-bind-html="project.description"></p>
+        <p class="description" ng-bind-html="project.description"></p>
         <a href back-button class="link"> Back to projects </a>
     </div>
 </article>

@@ -1,3 +1,8 @@
+.module-about {
+    @extend .module;
+    border : $main-brdr;
+    background-color : $main-bgclr-alt;
+}
 .module-about-picture {
     height : 200px;
     border : solid 1px rgb(190, 155, 170);
@@ -5,8 +10,16 @@
     float  : left;
 }
 .module-about-info {
-    overflow : auto;
+    @extend .module-body;
+    border    : $main-brdr;
+    font-size : $fnt-m;
+    padding   : $pdng-xl; 
+    overflow  : auto;
+    background-color : $main-bgclr-alt2;
     
+    section {
+        overflow: auto;
+    }
     .content {
         padding-top : 40px;
         padding-bottom: 30px;

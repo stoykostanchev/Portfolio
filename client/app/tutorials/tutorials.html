@@ -19,7 +19,7 @@
 </form>
 <!-- Tutorials found display -->
 <section class="tutor-results">
-    <article class="tutor-entry module-body main-bgclr-alt2" ng-repeat="tutorial in tutorials | orderBy: order : reverse | filter : search">
+    <article class="tutor-entry-body" ng-repeat="tutorial in tutorials | orderBy: order : reverse | filter : search">
         <header>
             <h1 class="title"> {{tutorial.title}}</h1>
             <time class="date"> {{tutorial.date | date : 'yyyy-MM-dd'}}</time>

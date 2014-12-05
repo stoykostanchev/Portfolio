@@ -70,7 +70,7 @@ angular.module('projectX',
         url      : '/projects',
         views  : { 
             '' : {
-                template : '<section ui-view="view" class="module main-brdr module-projects main-bgclr-alt"></section>'  
+                template : '<section ui-view="view" class="module-projects"></section>'  
             },
             'view@projects' : {
                 templateUrl : 'app/projects/list/list.html',

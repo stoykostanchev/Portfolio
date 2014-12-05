@@ -1,0 +1,48 @@
+.module-tutor {
+    .controls {
+        position : relative;
+        padding  : 10px 0px;
+        
+        .search {
+            position : absolute;
+            right    : 0px;
+            top      : 15px;
+        }
+        .filters {
+            display : inline-block;
+        }
+        .sorters {
+            margin-left : 30px;
+            display : inline-block;
+            
+            .glyphicon {
+                display   : inline-block;
+                font-size : 22px;
+                position  : relative;
+                top       : 7px;
+                cursor    : pointer;
+                color     : orange;
+                margin-left : 3px;
+            }
+        }
+    }
+}
+.tutor-results {
+    .tutor-entry {
+        margin : 5px 0 10px 0;
+        color  : black;
+        padding : 10px;
+        border-radius : 10px;
+    }
+}
+.tutor-entry-body {
+    @extend .module-body;
+    
+    .title {
+        font-size : 15px;
+        font-weight : bold;
+    }   
+    .description {
+        margin : 10px 0;
+    }
+}

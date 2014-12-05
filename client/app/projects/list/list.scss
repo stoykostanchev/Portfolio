@@ -1,0 +1,8 @@
+.project-list-entry {
+    div {
+        padding : $pdng-l;
+    }
+    .project-body {
+        @extend .module-body;
+    }
+}
