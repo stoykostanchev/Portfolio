@@ -32,7 +32,7 @@ angular.module('projectX').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/home/news/news.html',
-    "<section class=news><h1 class=\"header fnt-l\">Latest site updates:</h1><ul class=\"main-brdr main-bgclr-alt3 fnt-m\"><li class=\"newsItem pdng-l\" ng-repeat=\"newsItem in news\"><article><h2 class=\"title fnt-l\"><a ng-href={{newsItem.link}}><span class=icon-bullhorn></span>{{newsItem.title}}</a></h2><time class=date>{{newsItem.date | date : 'yyyy-MM-dd'}}</time><p class=description ng-bind-html=newsItem.description></p><p class=author>{{newsItem.author}}</p></article></li></ul></section>"
+    "<section class=news><h1 class=header>Latest site updates:</h1><ul><li class=newsItem ng-repeat=\"newsItem in news\"><article><h2 class=title><a ng-href={{newsItem.link}}><span class=icon-bullhorn></span>{{newsItem.title}}</a></h2><time class=date>{{newsItem.date | date : 'yyyy-MM-dd'}}</time><p class=description ng-bind-html=newsItem.description></p><p class=author>{{newsItem.author}}</p></article></li></ul></section>"
   );
 
 
